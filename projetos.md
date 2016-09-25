@@ -11,7 +11,7 @@ permalink: /projetos/
   <div class="page-center">
 		<section class="cards">
 
-			<a href="http://www.benevento.com.br" target="_blank">
+			<a href="http://www.hjdesigner.com.br/css-components" target="_blank">
 				<div class="cards-titulo">
 					<h2>CSS Components</h2>
 				</div>

@@ -11,9 +11,12 @@ email: hjdesigner23@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Um Blog de um desenvolvedor apaixonado por front-end, CSS evangelista, rock, viagens, moto, livros, fotografia e animais.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://henriquemelanda.com.br" # the base hostname & protocol for your site
-twitter_username: coisadedev
-github_username:  hjdesigner
+url: "https://henriquemelanda.com.br" # the base hostname & protocol for your site
+twitter: https://www.twitter.com/coisadedev
+github:  https://www.github.com/hjdesigner
+facebook: https://www.facebook.com/hjFrontEnd
+codepen: https://codepen.io/hjdesigner/
+linkedin: https://br.linkedin.com/in/coisadedev
 
 # Build settings
 markdown: kramdown
