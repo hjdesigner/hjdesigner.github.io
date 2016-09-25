@@ -1,0 +1,79 @@
+header{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 10;
+    background-color: $preto2;
+    top: 0px;
+    left: 0px;
+
+        .header-container{
+            @include center($content-desktop);
+        }
+        .brand{
+            height: 60px;
+            float: left;
+            line-height: 60px;
+            font-family: $font-padrao;
+            font-weight: 600;
+            color: $branco;
+            font-size: 1.3em;
+        }
+        .navbar{
+            width: auto;
+            height: 60px;
+            float: left;
+            margin-left: 213px;
+                ul{
+                    width: 100%;
+                    height: auto;
+                    list-style: none;
+                }
+                li{
+                    width: auto;
+                    height: auto;
+                    float: left;
+                    margin-right: 30px;
+                }
+                a{
+                    padding: 0 10px;
+                    font-family: $font-padrao;
+                    font-weight: 300;
+                    color: $branco;
+                    font-size: 1em;
+                    line-height: 60px;
+                    border-bottom: 2px solid $azul;
+                    cursor: pointer;
+                    transition: all .25s ease;
+                    &:hover{
+                        text-decoration: none;
+                        border-bottom: 2px solid $rosa;
+                    }                    
+                }
+        }
+        .social{
+            width: auto;
+            height: 60px;
+            float: right;
+                ul{
+                    width: 100%;
+                    height: auto;
+                    list-style: none;
+                    margin-top: 17px;
+                }
+                li{
+                    width: auto;
+                    height: auto;
+                    float: left;
+                    margin-left: 10px;
+                    &:hover{
+                        -webkit-animation: social 1s linear;
+                    }
+                }
+                svg{
+                    width: 25px;
+                    height: 25px;
+                    fill: $branco;
+                }
+        }
+}

@@ -1,0 +1,76 @@
+.page-content{
+	width: 100%;
+	height: auto;
+	padding-top: 70px;
+		.page-center{
+			@include center($content-desktop);
+		}
+		article{
+			width: 100%;
+			height: auto;
+			float: left;
+			&.home{
+				margin-top: 50px;
+			}
+				h1{
+					width: 100%;
+					height: auto;
+					float: left;
+					margin-bottom: 20px;
+					font-family: $font-padrao;
+		            font-weight: 400;
+		            color: $preto;
+		            font-size: 2em;
+		            	span{
+		            		width: auto;
+		            		height: auto;
+		            		float: left;
+		            		border-bottom: 2px solid $azul;
+		            		padding: 0 10px;
+		            	}
+				}
+				p{
+					width: 100%;
+					height: auto;
+					float: left;
+					margin-bottom: 10px;
+					line-height: 30px;
+					font-family: $font-padrao;
+		            font-weight: 400;
+		            color: $preto;
+		            font-size: 1.2em;	
+
+		            	a{
+		            		color: $preto;
+		            		text-decoration: underline;
+		            		&:hover{
+		            			color: $azul;
+		            		}
+		            	}
+				}
+		}
+}
+.link-todos{
+	width: 100%;
+	height: 50px;
+	float: left;
+	text-align: center;
+	margin: 20px 0;
+
+		a{
+			width: 100%;
+			height: 50px;
+			float: left;
+			border: 2px solid $cinza;
+			text-align: center;
+			line-height: 50px;
+			font-family: $font-padrao;
+            font-weight: 600;
+            color: $azul;
+            font-size: 1.2em;
+            transition: all .25s ease;
+            &:hover{
+            	background-color: $preto;
+            }
+		}
+}

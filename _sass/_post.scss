@@ -1,0 +1,42 @@
+article.post {
+	h1{
+		width: 100%;
+		height: auto;
+		float: left;
+		margin: 10px 0;
+		text-align: center;
+		font-family: $font-padrao;
+		font-size: 2em;
+        font-weight: 800;
+        color: $azul;
+	}
+	.date{
+		width: 100%;
+		height: auto;
+		float: left;
+		margin-bottom: 10px;
+		font-family: $font-padrao;
+		font-size: 1em;
+        font-weight: 400;
+        color: lighten( $preto, 50% );
+	}
+	.post-content{
+		width: 100%;
+		height: auto;
+		float: left;
+        	p{
+        		width: 100%;
+				height: auto;
+				float: left;
+				margin-bottom: 5px;
+				font-family: $font-padrao;
+				font-size: 1.1em;
+		        font-weight: 400;
+		        color: $preto;	
+        	}
+	}
+	iframe{
+		margin-top: 30px;
+		margin-left: calc(50% - 300px);
+	}
+}

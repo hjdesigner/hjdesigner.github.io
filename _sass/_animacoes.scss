@@ -1,0 +1,55 @@
+@-webkit-keyframes projetos{
+	0%{
+		transform: scale(0);
+	}
+	50%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(.9);
+	}
+}
+@-moz-keyframes projetos{
+	0%{
+		transform: scale(0);
+	}
+	50%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(.9);
+	}
+}
+@-o-keyframes projetos{
+	0%{
+		transform: scale(0);
+	}
+	50%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(.9);
+	}
+}
+@-ms-keyframes projetos{
+	0%{
+		transform: scale(0);
+	}
+	50%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(.9);
+	}
+}
+@-webkit-keyframes social{
+	0%{
+		transform: rotate(0deg);
+	}
+	50%{
+		transform: rotate(360deg);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+}
