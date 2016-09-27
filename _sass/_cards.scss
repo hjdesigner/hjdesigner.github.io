@@ -6,6 +6,9 @@
 	transform: scale(.9);
 	-webkit-animation: projetos 1s linear;
 	transition: all .5s ease;
+	@media screen and (max-width: $media-mobile) {
+		width: 96%;
+	}
 	&:hover{
 		transform: scale(1);		
 	}		
@@ -69,6 +72,9 @@
 	transform: scale(.9);
 	-webkit-animation: projetos 1s linear;
 	transition: all .5s ease;
+	@media screen and (max-width: $media-mobile) {
+		width: 96%;
+	}
 	&:hover{
 		transform: scale(1);
 		border: 1px solid dark ( $cinza, 80% );
@@ -92,6 +98,14 @@
 			font-size: 1.5em;
             font-weight: 600;
             color: $rosa;
+            @media screen and (max-width: $media-mobile) {
+            	font-size: 1.4em;
+            	height: auto;
+            }
+             @media screen and (max-width: $media-tablet) {
+            	font-size: 1.1em;
+            	line-height: 21px;
+            }
 		}
 		p{
 			width: 100%;

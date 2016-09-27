@@ -12,6 +12,10 @@
 		    position: relative;
 		    border-radius: 50%;
 		    background-color: rgba(0, 0, 0, 0.2);
+		    @media screen and (max-width: $media-mobile) {
+		    	margin: 0 auto 30px;
+		    	float: none;
+		    }
 
 				&:before{
 					content: "";

@@ -4,6 +4,9 @@
 	float: left;
 	position: relative;
 	z-index: 0;
+	@media screen and (max-width: $media-mobile) {
+		height: 200px;
+	}
 	&.Projetos{
 		background-image: url(../../assests/img/projetos.jpg);
 		background-size: cover;

@@ -6,9 +6,29 @@ header{
     background-color: $preto2;
     top: 0px;
     left: 0px;
+    @media screen and (max-width: $media-mobile) {
+        height: auto;
+        position: absolute;
+    }
+    @media screen and (max-width: $media-tablet) {
+        position: absolute;   
+    }
 
         .header-container{
             @include center($content-desktop);
+
+            @media screen and (max-width: $media-mobile) {
+                width: 100%;
+                height: auto;
+                float: left;
+            }
+            @media screen and (max-width: $media-tablet) {
+                width: 96%;
+                height: auto;
+                float: left;
+                padding: 0 2%;
+            }
+
         }
         .brand{
             height: 60px;
@@ -18,22 +38,56 @@ header{
             font-weight: 600;
             color: $branco;
             font-size: 1.3em;
+            @media screen and (max-width: $media-mobile) {
+                width: 100%;
+                height: auto;
+                text-align: center;
+                font-size: 1em;
+                line-height: 30px
+            }
+            @media screen and (max-width: $media-tablet) {
+                font-size: 1.1em;
+            }
         }
         .navbar{
             width: auto;
             height: 60px;
             float: left;
             margin-left: 213px;
+            @media screen and (max-width: $media-mobile) {
+                width: 100%;
+                margin-left: 0px !important;
+                height: 30px;
+                position: initial !important;
+
+            }
+            @media screen and (max-width: $media-tablet) {
+                position: absolute;
+                margin-left: calc(50% - 150px);
+            }
                 ul{
                     width: 100%;
                     height: auto;
                     list-style: none;
+                    @media screen and (max-width: $media-mobile) {
+                        width: 235px;
+                        margin: 0 auto;
+                    }
                 }
                 li{
                     width: auto;
                     height: auto;
                     float: left;
                     margin-right: 30px;
+                    @media screen and (max-width: $media-mobile) {
+                    margin-right: 27px;
+                    &:last-child{
+                        margin-right: 0px;
+                    }
+                    }
+                    @media screen and (max-width: $media-tablet) {
+                        margin-right: 20px;
+                    }
                 }
                 a{
                     padding: 0 10px;
@@ -48,18 +102,35 @@ header{
                     &:hover{
                         text-decoration: none;
                         border-bottom: 2px solid $rosa;
-                    }                    
+                    }  
+                    @media screen and (max-width: $media-mobile) {
+                        font-size: .8em;
+                        padding: 0 5px;
+                        line-height: 30px;
+                    }                  
                 }
         }
         .social{
             width: auto;
             height: 60px;
             float: right;
+            @media screen and (max-width: $media-mobile) {
+                width: 100%;
+                height: auto;
+                margin-bottom: 5px;
+            }   
                 ul{
                     width: 100%;
                     height: auto;
                     list-style: none;
                     margin-top: 17px;
+                    @media screen and (max-width: $media-mobile) {
+                        width: 150px;
+                        margin: 10px auto;
+                    }   
+                    @media screen and (max-width: $media-tablet) {
+                        margin-top: 20px;
+                    }
                 }
                 li{
                     width: auto;
@@ -69,11 +140,18 @@ header{
                     &:hover{
                         -webkit-animation: social 1s linear;
                     }
+                    @media screen and (max-width: $media-tablet) {
+                        margin-left: 9px;
+                    }
                 }
                 svg{
                     width: 25px;
                     height: 25px;
                     fill: $branco;
+                    @media screen and (max-width: $media-mobile) {
+                        width: 20px;
+                        height: 20px;
+                    }   
                 }
         }
 }

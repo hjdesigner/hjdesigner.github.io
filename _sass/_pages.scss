@@ -4,11 +4,26 @@
 	padding-top: 70px;
 		.page-center{
 			@include center($content-desktop);
+			@media screen and (max-width: $media-mobile) {
+				@include center($content-mobile);
+			}
+			@media screen and (max-width: $media-tablet) {
+				@include center($content-tablet);				
+			}
+
 		}
 		article{
 			width: 100%;
 			height: auto;
 			float: left;
+			@media screen and (max-width: $media-mobile) {
+				width: 96%;
+				padding: 2%;
+			}
+			@media screen and (max-width: $media-tablet) {
+				width: 96%;
+				padding: 2%;
+			}
 			&.home{
 				margin-top: 50px;
 			}
