@@ -8,6 +8,7 @@
 	transition: all .5s ease;
 	@media screen and (max-width: $media-mobile) {
 		width: 96%;
+		height: auto;
 	}
 	&:hover{
 		transform: scale(1);		
@@ -74,6 +75,7 @@
 	transition: all .5s ease;
 	@media screen and (max-width: $media-mobile) {
 		width: 96%;
+		height: auto;
 	}
 	&:hover{
 		transform: scale(1);
