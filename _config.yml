@@ -23,6 +23,9 @@ markdown: kramdown
 
 permalink: /:title
 
+sass:
+  style: compressed
+
 links:
   - title: Home
     url: /
