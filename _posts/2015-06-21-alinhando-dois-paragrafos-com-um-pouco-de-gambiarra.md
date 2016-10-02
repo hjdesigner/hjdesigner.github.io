@@ -32,6 +32,7 @@ Coloquei cada linha em um parágrafo e no css usei a propriedade text-align: jus
 	  float: left;
 	  color: #FFF;
 	  line-height: 12px;
+	  text-align: justify;
 	  margin: 0 0 0 calc(50% - 300px);
 	}
 {% endhighlight %}
@@ -56,6 +57,7 @@ Eureca…. vou usar letter-spacing, pronto problema resolvido bora mandar o cód
 	  float: left;
 	  color: #FFF;
 	  line-height: 12px;
+	  text-align: justify;
     	  margin: 0 0 0 calc(50% - 300px);
 	}
 	p:first-child{
