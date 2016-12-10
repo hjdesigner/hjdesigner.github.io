@@ -10,6 +10,7 @@
     padding: 30px 0;
     color: #FFF;
     font-size: 1.3em;
+    overflow: auto;
 
     .highlighter-rouge & {
       background: $preto;
@@ -81,35 +82,35 @@
     .il    { color: #099 } // Literal.Number.Integer.Long
     .o,
     .p     { color: #f7f7f2 }
-    .m, 
-    .n, 
-    .nb, 
-    .ni, 
-    .nl, 
-    .nn, 
-    .py, 
-    .nv, 
-    .w, 
-    .bp, 
-    .vc, 
-    .vg, 
+    .m,
+    .n,
+    .nb,
+    .ni,
+    .nl,
+    .nn,
+    .py,
+    .nv,
+    .w,
+    .bp,
+    .vc,
+    .vg,
     .vi     { color: #a4d043; }
-    .na, 
-    .nc, 
-    .nd, 
-    .ne, 
-    .nf, 
+    .na,
+    .nc,
+    .nd,
+    .ne,
+    .nf,
     .nx     { color: #a6e22e; }
-    .ld, 
-    .s, 
-    .sb, 
-    .sc, 
-    .sd, 
-    .s2, 
-    .sh, 
-    .si, 
-    .sx, 
-    .sr, 
-    .s1, 
+    .ld,
+    .s,
+    .sb,
+    .sc,
+    .sd,
+    .s2,
+    .sh,
+    .si,
+    .sx,
+    .sr,
+    .s1,
     .ss     { color: #e6db74; }
 }

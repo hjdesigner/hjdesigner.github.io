@@ -14,7 +14,7 @@
   {% if page.image %}
   <meta property="twitter:image:src" content="{{ site.url }}{{page.image }}">
   {% else %}
-  <meta property="twitter:image:src" content="{{ "/assets/img/blog-image.png" | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="twitter:image:src" content="{{ "/assests/img/blog-image.png" | prepend: site.baseurl | prepend: site.url }}">
   {% endif %}
 
   	<!-- Social: Facebook / Open Graph -->
@@ -24,7 +24,7 @@
     {% if page.image %}
     <meta property="og:image" content="{{ site.url }}{{page.image }}">
     {% else %}
-    <meta property="og:image" content="{{ "/assets/img/blog-image.png" | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:image" content="{{ "/assests/img/blog-image.png" | prepend: site.baseurl | prepend: site.url }}">
     {% endif %}
     <meta property="og:description" content="{% if page.introducao %}{{ page.introducao | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:site_name" content="{{ site.title }}">
@@ -32,23 +32,23 @@
     <!-- Social: Google+ / Schema.org  -->
     <meta itemprop="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
     <meta itemprop="description" content="{% if page.introducao %}{{ page.introducao | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-    <meta itemprop="image" content="{{ "/assets/img/blog-image.png" | prepend: site.baseurl | prepend: site.url }}"/>
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/img/favicon/manifest.json">
+    <meta itemprop="image" content="{{ "/assests/img/blog-image.png" | prepend: site.baseurl | prepend: site.url }}"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assests/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assests/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assests/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assests/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assests/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assests/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assests/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assests/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assests/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assests/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assests/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assests/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assests/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assests/img/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#3CA3F2">
-    <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="/assests/img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#3CA3F2">
 
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
