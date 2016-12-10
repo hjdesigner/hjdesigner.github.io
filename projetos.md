@@ -4,9 +4,10 @@ title: Projetos
 permalink: /projetos/
 ---
 
-<div class="page-banner {{ page.title }}">
+<!--<div class="page-banner {{ page.title }}">
 	<h1>{{ page.title }}</h1>
-</div>
+</div>-->
+
 <div class="page-content">
   <div class="page-center">
 		<section class="cards">
@@ -25,7 +26,7 @@ permalink: /projetos/
 							<span>CSS (Sass)</span>
 						</div>
 			</a>
-					
+
 		</section>
 		<section class="cards">
 
@@ -46,7 +47,7 @@ permalink: /projetos/
 							<span>VTEX</span>
 						</div>
 			</a>
-					
+
 		</section>
 
 		<section class="cards">
@@ -69,7 +70,7 @@ permalink: /projetos/
 							<span>Google Tag Manager</span>
 						</div>
 			</a>
-					
+
 		</section>
 		<section class="cards">
 
@@ -91,7 +92,7 @@ permalink: /projetos/
 							<span>Google Tag Manager</span>
 						</div>
 			</a>
-					
+
 		</section>
 		<section class="cards">
 
@@ -113,7 +114,7 @@ permalink: /projetos/
 							<span>Google Tag Manager</span>
 						</div>
 			</a>
-					
+
 		</section>
 	</div>
 </div>

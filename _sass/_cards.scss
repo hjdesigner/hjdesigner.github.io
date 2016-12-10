@@ -11,8 +11,8 @@
 		height: auto;
 	}
 	&:hover{
-		transform: scale(1);		
-	}		
+		transform: scale(1);
+	}
 		.cards-titulo{
 			width: 100%;
 			height: 57px;
@@ -42,7 +42,7 @@
 		}
 		.tags{
 			width: 100%;
-			height: auto; 
+			height: auto;
 			float: left;
 			margin: 10px;
 			font-family: $font-padrao;
@@ -63,59 +63,35 @@
 		}
 }
 .card-blog{
-	width: 28%;
+	width: 80%;
 	height: auto;
 	float: left;
-	margin: 2% 1% 0 0;
-	padding: 2%;
-	border: 1px solid $cinza;
-	border-radius: 5px;
-	transform: scale(.9);
-	-webkit-animation: projetos 1s linear;
-	transition: all .5s ease;
-	@media screen and (max-width: $media-mobile) {
-		width: 96%;
-		height: auto;
-	}
+	margin: 1% 0 0 0;
+	padding: 0 10% 20px 10%;
 	&:hover{
-		transform: scale(1);
-		border: 1px solid dark ( $cinza, 80% );
-	}		
+		.card-blog-title{
+			color: $azul;
+		}
+	}
 		.card-blog-date{
 			width: 100%;
 			height: auto;
 			float: left;
+			text-align: center;
 			font-family: $font-padrao;
 			font-size: .7em;
-            font-weight: 400;
-            color: lighten( $preto, 50% );
+      font-weight: 400;
+      color: lighten( $preto, 50% );
 		}
 		.card-blog-title{
 			width: 100%;
-			height: 84px;
+			height: auto;
 			float: left;
-			margin-bottom: 5px;
 			line-height: 28px;
+			text-align: center;
 			font-family: $font-padrao;
-			font-size: 1.5em;
-            font-weight: 600;
-            color: $rosa;
-            @media screen and (max-width: $media-mobile) {
-            	font-size: 1.4em;
-            	height: auto;
-            }
-             @media screen and (max-width: $media-tablet) {
-            	font-size: 1.1em;
-            	line-height: 21px;
-            }
-		}
-		p{
-			width: 100%;
-			height: 60px;
-			float: left;
-			font-family: $font-padrao;
-			font-size: .9em;
-            font-weight: 600;
-            color: $preto;
+			font-size: 1em;
+      font-weight: 600;
+      color: $rosa;
 		}
 }

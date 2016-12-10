@@ -27,7 +27,7 @@ sass:
   style: compressed
 
 links:
-  - title: Home
+  - title: Sobre
     url: /
   - title: Blog
     url: /blog

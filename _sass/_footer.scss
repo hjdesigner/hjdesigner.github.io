@@ -1,20 +1,44 @@
 .site-footer{
 	width: 100%;
-    height: 30px;
+    height: 40px;
     float: left;
     margin-top: 30px;
     background-color: $preto2;
     text-align: center;
 
-    	.brand{
-            width: 100%;
-		    height: 30px;
-		    float: left;
-            line-height: 30px;
-            text-align: center;
-            font-family: $font-padrao;
-            font-weight: 300;
-            color: dark( $branco, 20% );
-            font-size: .9em;
-        }
+		.social{
+				width: 100%;
+				height: 40px;
+				float: left;
+						ul{
+								width: 170px;
+								height: auto;
+								list-style: none;
+								margin: 10px auto;
+								@media screen and (max-width: $media-mobile) {
+									width: 145px;
+								}
+						}
+						li{
+								width: auto;
+								height: auto;
+								float: left;
+								margin-left: 10px;
+								&:hover{
+										-webkit-animation: social 1s linear;
+								}
+								@media screen and (max-width: $media-tablet) {
+										margin-left: 9px;
+								}
+						}
+						svg{
+								width: 25px;
+								height: 25px;
+								fill: $branco;
+								@media screen and (max-width: $media-mobile) {
+										width: 20px;
+										height: 20px;
+								}
+						}
+		}
 }
