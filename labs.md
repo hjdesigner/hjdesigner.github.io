@@ -11,6 +11,48 @@ permalink: /labs/
   <div class="page-center">
 	<section class="cards">
 
+		<a href="http://codepen.io/hjdesigner/full/GNaqoV/" target="_blank">
+			<div class="cards-titulo">
+				<h2>Pure CSS Happy Holidays!</h2>
+			</div>
+
+				<figure class="cards-image">
+					<img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.GNaqoV.small.acba75de-c0de-46c4-8fdb-917307943df9.png" alt="Pure CSS Happy Holidays!">
+				</figure>
+
+		</a>
+
+	</section>
+	<section class="cards">
+
+		<a href="http://codepen.io/hjdesigner/full/JbzywJ/" target="_blank">
+			<div class="cards-titulo">
+				<h2>Luke Skywalker Pixel Art CSS</h2>
+			</div>
+
+				<figure class="cards-image">
+					<img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.JbzywJ.small.c26a9f97-784a-4b8c-8654-5b0f6f642a61.png" alt="Luke Skywalker Pixel Art CSS">
+				</figure>
+
+		</a>
+
+	</section>
+	<section class="cards">
+
+		<a href="http://codepen.io/hjdesigner/full/qqgZzz/" target="_blank">
+			<div class="cards-titulo">
+				<h2>Pagination Pure CSS</h2>
+			</div>
+
+				<figure class="cards-image">
+					<img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.qqgZzz.small.75d4bee0-dbf3-4cdc-8bf9-41a0426f009c.png" alt="Pagination Pure CSS">
+				</figure>
+
+		</a>
+
+	</section>
+	<section class="cards">
+
 		<a href="http://codepen.io/hjdesigner/full/RoKejv/" target="_blank">
 			<div class="cards-titulo">
 				<h2>Breakfast Pure CSS</h2>
