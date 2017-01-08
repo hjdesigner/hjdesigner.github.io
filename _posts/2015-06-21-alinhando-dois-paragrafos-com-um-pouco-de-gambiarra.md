@@ -3,6 +3,7 @@ layout: post
 title:  "Alinhando dois parágrafos com um pouco de gambiarra"
 date:   2016-10-01 20:05:35 -0300
 introducao: Essa semana me deparei com um texto inocente no rodapé do site
+tag: Alinhando dois parágrafos com css
 ---
 
 ![Imagem Exemplo do parágrafo](assests/img/img-paragrafo.jpg){:height="100px" width="600px"}

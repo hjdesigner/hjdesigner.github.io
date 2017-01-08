@@ -2,6 +2,7 @@
 layout: page
 title: Projetos
 permalink: /projetos/
+tag: Projetos Henrique Rodrigues, Projetos Coisa de Dev
 ---
 
 <!--<div class="page-banner {{ page.title }}">

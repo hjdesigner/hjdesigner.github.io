@@ -5,6 +5,8 @@
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.introducao %}{{ page.introducao | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="Henrique Rodrigues">
+  <meta name="keywords" content="{% if page.tag %}{{ page.tag }}{% else %}{{ site.tag }}{% endif %}">
 
   <!-- Social: Twitter -->
   <meta name="twitter:card" content="summary_large_image">

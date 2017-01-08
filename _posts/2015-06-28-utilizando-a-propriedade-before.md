@@ -3,6 +3,7 @@ layout: post
 title:  "Utilizando a propriedade ::before para colocar um elemento antes do conteúdo"
 date:   2015-06-28 20:05:35 -0300
 introducao: como colocar um elemento antes do conteúdo através do CSS Before.
+tag: before, pseudo-class, before css
 ---
 
 Nesse video vou ensinar como colocar um elemento antes do conteúdo através do CSS.

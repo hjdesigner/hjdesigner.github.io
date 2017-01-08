@@ -3,6 +3,7 @@ layout: post
 title:  "Colunas com CSS3"
 date:   2015-06-21 20:05:35 -0300
 introducao: Como pegar um texto em bloco e dividir ele em colunas.
+tag: Colunas com css
 ---
 
 Nesse video vou ensinar a pegar um texto em bloco e dividir ele em colunas somente com css.

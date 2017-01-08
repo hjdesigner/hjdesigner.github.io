@@ -1,44 +1,94 @@
 .site-footer{
 	width: 100%;
-    height: 40px;
+    height: auto;
     float: left;
+    padding: 10px 0;
     margin-top: 30px;
     background-color: $preto2;
     text-align: center;
 
+    	p{
+    		width: 100%;
+    		height: auto;
+    		float: left;
+    		text-align: center;
+    		font-family: $font-padrao;
+            font-weight: 400;
+            color: $branco;
+            font-size: 1em;
+    	}
+    	.coracao {
+		    position: relative;
+		    display: inline;
+		    margin-left: 7px;
+		}
+    	.coracao:before, .coracao:after{
+			width: 10px;
+			height: 17px;
+			position: absolute;
+			top:3px;
+			left: 9px;
+			content: "";
+			background: #FF0000;
+			border-radius: 50px 50px 0 0;
+			-webkit-transform: rotate(-45deg);
+			-moz-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			-o-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			-webkit-transform-origin: 0 100%;
+			-moz-transform-origin: 0 100%;
+			-ms-transform-origin: 0 100%;
+			-o-transform-origin: 0 100%;
+			transform-origin: 0 100%;
+		}
+		.coracao:after{
+			left: 0;
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+			-webkit-transform-origin: 100% 100%;
+			-moz-transform-origin: 100% 100%;
+			-ms-transform-origin: 100% 100%;
+			-o-transform-origin: 100% 100%;
+			transform-origin: 100% 100%;
+		}
+
 		.social{
-				width: 100%;
-				height: 40px;
-				float: left;
-						ul{
-								width: 175px;
-								height: auto;
-								list-style: none;
-								margin: 10px auto;
-								@media screen and (max-width: $media-mobile) {
-									width: 145px;
-								}
-						}
-						li{
-								width: auto;
-								height: auto;
-								float: left;
-								margin-left: 10px;
-								&:hover{
-										-webkit-animation: social 1s linear;
-								}
-								@media screen and (max-width: $media-tablet) {
-										margin-left: 9px;
-								}
-						}
-						svg{
-								width: 25px;
-								height: 25px;
-								fill: $branco;
-								@media screen and (max-width: $media-mobile) {
-										width: 20px;
-										height: 20px;
-								}
-						}
+			width: 100%;
+			height: 40px;
+			float: left;
+				ul{
+					width: 175px;
+					height: auto;
+					list-style: none;
+					margin: 10px auto;
+					@media screen and (max-width: $media-mobile) {
+						width: 145px;
+					}
+				}
+				li{
+					width: auto;
+					height: auto;
+					float: left;
+					margin-left: 10px;
+					&:hover{
+						-webkit-animation: social 1s linear;
+					}
+					@media screen and (max-width: $media-tablet) {
+						margin-left: 9px;
+					}
+				}
+				svg{
+					width: 25px;
+					height: 25px;
+					fill: $branco;
+					@media screen and (max-width: $media-mobile) {
+						width: 20px;
+						height: 20px;
+					}
+				}
 		}
 }

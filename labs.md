@@ -2,6 +2,7 @@
 layout: page
 title: Labs
 permalink: /labs/
+tag: Lab, Brincadeiras, Experimentos, Experimentos CSS 
 ---
 
 <!--<div class="page-banner {{ page.title }}">
@@ -11,13 +12,27 @@ permalink: /labs/
   <div class="page-center">
 	<section class="cards">
 
+		<a href="http://codepen.io/hjdesigner/full/xRmqpp/" target="_blank">
+			<div class="cards-titulo">
+				<h2>Filter Instagram Pure CSS</h2>
+			</div>
+
+				<figure class="cards-image">
+					<img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.xRmqpp.small.1df17a4e-491f-4a8b-82c7-3bac096f91ef.png" alt="Pure CSS Happy Holidays!">
+				</figure>
+
+		</a>
+
+	</section>
+	<section class="cards">
+
 		<a href="http://codepen.io/hjdesigner/full/GNaqoV/" target="_blank">
 			<div class="cards-titulo">
 				<h2>Pure CSS Happy Holidays!</h2>
 			</div>
 
 				<figure class="cards-image">
-					<img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.GNaqoV.small.acba75de-c0de-46c4-8fdb-917307943df9.png" alt="Pure CSS Happy Holidays!">
+					<img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.GNaqoV.small.11908b76-78b2-4be1-b1f1-9072041b0dcd.png" alt="Pure CSS Happy Holidays!">
 				</figure>
 
 		</a>
@@ -168,21 +183,7 @@ permalink: /labs/
 
 		</section>
 
-		<section class="cards">
-
-			<a href="http://codepen.io/hjdesigner/pen/wMQEQx" target="_blank">
-				<div class="cards-titulo">
-					<h2>Pure CSS3 Nibbler Futurama</h2>
-				</div>
-
-					<figure class="cards-image">
-						<img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.wMQEQx.small.6e9c20f9-d483-4efe-8e9b-f104336b9527.png" alt="Pure CSS3 Nibbler Futurama">
-					</figure>
-
-			</a>
-
-		</section>
-
+	
 			<div class="link-todos">
 				<a href="http://codepen.io/hjdesigner/" target="_blank">Confira todo Laboratório</a>
 			</div>
