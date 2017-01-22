@@ -2,7 +2,7 @@
 layout: page
 title: Labs
 permalink: /labs/
-tag: Lab, Brincadeiras, Experimentos, Experimentos CSS 
+tag: Lab, Brincadeiras, Experimentos, Experimentos CSS
 ---
 
 <!--<div class="page-banner {{ page.title }}">
@@ -10,7 +10,21 @@ tag: Lab, Brincadeiras, Experimentos, Experimentos CSS
 </div>-->
 <div class="page-content">
   <div class="page-center">
-	<section class="cards">
+  <section class="cards">
+
+    <a href="/galeria-daily-css-images">
+      <div class="cards-titulo">
+        <h2>Galeria Daily CSS Images</h2>
+      </div>
+
+        <figure class="cards-image">
+          <img src="../assests/img/daily-css-images.png" alt="Galeria Daily CSS Images">
+        </figure>
+
+    </a>
+
+  </section>
+  <section class="cards">
 
 		<a href="http://codepen.io/hjdesigner/full/xRmqpp/" target="_blank">
 			<div class="cards-titulo">
@@ -168,22 +182,8 @@ tag: Lab, Brincadeiras, Experimentos, Experimentos CSS
 
 		</section>
 
-		<section class="cards">
 
-			<a href="http://codepen.io/hjdesigner/pen/Pzyxyw" target="_blank">
-				<div class="cards-titulo">
-					<h2>Logo Github somente com CSS3</h2>
-				</div>
 
-					<figure class="cards-image">
-						<img src="http://s3-us-west-2.amazonaws.com/m.cdpn.io/screenshot-coming-soon-small.png" alt="Logo Github somente com CSS3">
-					</figure>
-
-			</a>
-
-		</section>
-
-	
 			<div class="link-todos">
 				<a href="http://codepen.io/hjdesigner/" target="_blank">Confira todo Laboratório</a>
 			</div>

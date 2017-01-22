@@ -90,6 +90,98 @@
 					float: right;
 				}
 		}
+		&.daily{
+			.page-center{
+				width: 100%;
+			}
+			h1{
+				width: 100%;
+				height: auto;
+				float: left;
+				margin: 0;
+				text-align: center;
+				font-family: $font-padrao;
+				font-weight: 600;
+				color: $rosa;
+				font-size: 2.8em;
+				@media screen and (max-width: $media-mobile) {
+					font-size: 1.5em;
+				}
+			}
+			p{
+				width: 100%;
+				height: auto;
+				float: left;
+				margin: 20px 0 40px;
+				text-align: center;
+				font-family: $font-padrao;
+				font-weight: 400;
+				color: $preto;
+				font-size: 1.3em;
+				@media screen and (max-width: $media-mobile) {
+					font-size: 1em;
+				}
+			}
+			.box-semanas{
+				width: 100%;
+				height: auto;
+				float: left;
+					ul{
+						width: 98%;
+						height: auto;
+						float: left;
+						padding: 40px 1%;
+						list-style: none;
+						background-color: $vinho;
+						@media screen and (max-width: $media-mobile) {
+							padding: 10px 1%;
+						}
+					}
+					h2{
+						width: 100%;
+						height: auto;
+						float: left;
+						padding: 10px 2%;
+						margin: 0 0 0;
+						text-align: left;
+						background-color: $cinza;
+						font-family: $font-padrao;
+						font-weight: 600;
+						color: $preto;
+						font-size: 1.5em;
+						box-sizing: border-box;
+					}
+					li{
+						width: 24%;
+						height: auto;
+						float: left;
+						margin: 0 1.3% 0 0;
+						box-sizing: border-box;
+						border: 2px solid $cinza;
+						transition: border .25s ease-in-out;
+							&:last-child{
+								margin-right: 0;
+							}
+							&:hover{
+								border: 2px solid $preto;
+							}
+							@media screen and (max-width: $media-mobile) {
+								width: 48%;
+								margin: 0 0 5px 1.4%;
+							}
+					}
+					figure{
+						width: 100%;
+						height: auto;
+						float: left;
+						margin: 0;
+						padding: 0;
+							img{
+								width: 100%;
+							}
+					}
+			}
+		}
 }
 .link-todos{
 	width: 100%;
