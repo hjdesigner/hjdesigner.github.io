@@ -10,6 +10,23 @@ tag: Daily CSS Images, Images pure css, Desenhando com CSS, Galeria Daily CSS Im
     <h1>Daily CSS Images</h1>
     <p>Minha galeria do desafio 50 dias desenhando imagens com CSS <3</p>
     <div class="box-semanas">
+      <h2>Semana #3</h2>
+      <ul>
+        <li>
+          <figure>
+            <a href="http://codepen.io/hjdesigner/pen/qRjryX" target="_black">
+              <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.qRjryX.small.7590667e-5aea-4239-9e83-94c2afebf6fb.png">
+            </a>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="http://codepen.io/hjdesigner/pen/qRXMzm" target="_black">
+              <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.qRXMzm.small.cd2765bf-5a28-489a-a5e6-779812935197.png">
+            </a>
+          </figure>
+        </li>
+      </ul>
       <h2>Semana #2</h2>
       <ul>
         <li>
