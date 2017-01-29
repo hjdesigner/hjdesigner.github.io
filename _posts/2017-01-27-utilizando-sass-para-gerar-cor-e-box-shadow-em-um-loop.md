@@ -4,6 +4,7 @@ title:  "Utilizando Sass para gerar cor e box-shadow em um loop"
 date:   2017-01-27 18:41:35 -0300
 introducao: Utilizando Sass para gerar cor e box-shadow em um loop.
 tag: sass, loop em sass, sass para gerar cor
+image: /assests/img/utilizando-sass-para-gerar-cor-e-box-shadow-em-um-loop.jpg
 ---
 
 Este é um pequeno experimento de quando eu estava mexendo com o ajuste da propriedade do elemento usando Sass em for-loop
