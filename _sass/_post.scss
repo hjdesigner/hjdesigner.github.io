@@ -31,14 +31,26 @@ article.post {
 		float: left;
         	p{
         		width: 100%;
-				height: auto;
-				float: left;
-				margin-bottom: 5px;
-				font-family: $font-padrao;
-				font-size: 1.1em;
+						height: auto;
+						float: left;
+						margin-bottom: 5px;
+						font-family: $font-padrao;
+						font-size: 1.1em;
 		        font-weight: 400;
-		        color: $preto;	
+		        color: $preto;
         	}
+					.cp_embed_wrapper {
+					    float: left;
+					    position: relative;
+					    width: 100%;
+					    height: auto;
+					    padding: 0;
+					    margin: 0;
+							iframe{
+								margin-left: 0;
+								margin-bottom: 30px;
+							}
+					}
 	}
 	iframe{
 		margin-top: 30px;

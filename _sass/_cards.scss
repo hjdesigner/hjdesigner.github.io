@@ -62,16 +62,37 @@
             	}
 		}
 }
+.blog-content{
+	ul{
+		width: 100%;
+		height: auto;
+		float: left;
+		list-style: none;
+		@media screen and (min-width: $media-mobile) and (max-width: $media-tablet) {
+			width: 98%;
+			margin: calc(50% - 48%);
+		}
+	}
+}
 .card-blog{
-	width: 80%;
+	width: 20%;
 	height: auto;
 	float: left;
-	margin: 1% 0 0 0;
-	padding: 0 10% 20px 10%;
+	margin: 1% 6% 0 0;
+	padding: 20px;
+	box-sizing: border-box;
+	border: 1px solid $cinza;
+	@media screen and (max-width: $media-mobile) {
+		width: 98%;
+		margin: 1% 6% 0 1%;
+	}
 	&:hover{
 		.card-blog-title{
 			color: $azul;
 		}
+	}
+	&:nth-child(4){
+		margin-right: 0;
 	}
 		.card-blog-date{
 			width: 100%;

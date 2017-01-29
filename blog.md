@@ -17,25 +17,28 @@ tag: Blog sobre front-end, Blog Henrique Rodrigues, Blog Coisa de Dev
 		  <h2>No posts found =(</h2>
 
 		{% else %}
-		  {% for post in site.posts %}
-		    <section class="card-blog">
-		    	<a href="{{ post.url | prepend: site.baseurl }}">
-			        <small class="card-blog-date">
-			          <time>{% include post-date.html %}</time>
-			        </small>
-			        <h2 class="card-blog-title">
-			          {{ post.title }}
-			        </h2>
-		        </a>
-		    </section>
-		  {% endfor %}
+      <ul>
+        {% for post in site.posts %}
+        <li class="card-blog">
+          <a href="{{ post.url | prepend: site.baseurl }}">
+            <small class="card-blog-date">
+              <time>{% include post-date.html %}</time>
+            </small>
+            <h2 class="card-blog-title">
+              {{ post.title }}
+            </h2>
+          </a>
+        </li>
+        {% endfor %}
+        
+      </ul>
 
 		{% endif %}
 
 
 
 
-		
+
 
 	</div>
 </div>
