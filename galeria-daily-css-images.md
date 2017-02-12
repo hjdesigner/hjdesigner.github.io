@@ -33,7 +33,13 @@ tag: Daily CSS Images, Images pure css, Desenhando com CSS, Galeria Daily CSS Im
           </a>
         </figure>
       </li>
-      
+      <li>
+        <figure>
+          <a href="http://codepen.io/hjdesigner/pen/NdeawO" target="_black">
+            <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.NdeawO.small.17c17af0-b78d-4ae0-85a0-7b88c3bb0ba0.png">
+          </a>
+        </figure>
+      </li>
 
     </ul>
       <h2>Semana #3</h2>
