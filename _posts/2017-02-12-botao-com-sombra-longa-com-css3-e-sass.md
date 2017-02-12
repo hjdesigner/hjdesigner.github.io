@@ -4,7 +4,7 @@ title:  "Botão com sombra longa com CSS3 e SASS"
 date:   2017-02-12 18:58:35 -0300
 introducao: Botão com sombra longa com CSS3 e SASS
 tag: sass, loop em sass, botão com sombra, css3
-image: /assests/img/utilizando-sass-para-gerar-cor-e-box-shadow-em-um-loop.jpg
+image: /assests/img/botao-com-sombra-longa-com-css3-e-sass.jpg
 ---
 
 Ao lado do design, design de sombra longa é definitivamente continua popular. Ele é usado em muitos estilos mais aparece melhor para ícones.
