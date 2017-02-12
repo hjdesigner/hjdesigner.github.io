@@ -20,8 +20,9 @@ Nós buscaremos melhores práticas para fazer nosso código mais reutilizáveis,
 
 Então vamos escrever dentro do código para nosso botão com sombra longa!
 
-
+<br />
 <strong>Usando fontes ícones e preparando nosso HTML</strong>
+<br />
 
 
 Então, se utilizamos ambos Zocial e Font Awesome. Nós utilizamos ambos porque temos mais ícones para mostrar, e nesse caso porque o Zocial Facebook Ícone parece ruim IMO ( E eu escolhi fazer botões sociais de sombra longas para esse artigo).
