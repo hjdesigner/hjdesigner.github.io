@@ -20,7 +20,9 @@ Nós buscaremos melhores práticas para fazer nosso código mais reutilizáveis,
 
 Então vamos escrever dentro do código para nosso botão com sombra longa!
 
+
 <strong>Usando fontes ícones e preparando nosso HTML</strong>
+
 
 Então, se utilizamos ambos Zocial e Font Awesome. Nós utilizamos ambos porque temos mais ícones para mostrar, e nesse caso porque o Zocial Facebook Ícone parece ruim IMO ( E eu escolhi fazer botões sociais de sombra longas para esse artigo).
 
@@ -142,7 +144,42 @@ Vamos olhar para a sombra CSS em um dos nosso botões com nossa sombra longa.
 
   .google-plus {
     background: #dd4b39;
-    text-shadow: 0px 0px #c23321, 1px 1px #c23321, 2px 2px #c23321, 3px 3px #c23321, 4px 4px #c23321, 5px 5px #c23321, 6px 6px #c23321, 7px 7px #c23321, 8px 8px #c23321, 9px 9px #c23321, 10px 10px #c23321, 11px 11px #c23321, 12px 12px #c23321, 13px 13px #c23321, 14px 14px #c23321, 15px 15px #c23321, 16px 16px #c23321, 17px 17px #c23321, 18px 18px #c23321, 19px 19px #c23321, 20px 20px #c23321, 21px 21px #c23321, 22px 22px #c23321, 23px 23px #c23321, 24px 24px #c23321, 25px 25px #c23321, 26px 26px #c23321, 27px 27px #c23321, 28px 28px #c23321, 29px 29px #c23321, 30px 30px #c23321, 31px 31px #c23321, 32px 32px #c23321, 33px 33px #c23321, 34px 34px #c23321, 35px 35px #c23321;
+    text-shadow: 0px 0px #c23321,
+                1px 1px #c23321,
+                2px 2px #c23321,
+                3px 3px #c23321,
+                4px 4px #c23321,
+                5px 5px #c23321,
+                6px 6px #c23321,
+                7px 7px #c23321,
+                8px 8px #c23321,
+                9px 9px #c23321,
+                10px 10px #c23321,
+                11px 11px #c23321,
+                12px 12px #c23321,
+                13px 13px #c23321,
+                14px 14px #c23321,
+                15px 15px #c23321,
+                16px 16px #c23321,
+                17px 17px #c23321,
+                18px 18px #c23321,
+                19px 19px #c23321,
+                20px 20px #c23321,
+                21px 21px #c23321,
+                22px 22px #c23321,
+                23px 23px #c23321,
+                24px 24px #c23321,
+                25px 25px #c23321,
+                26px 26px #c23321,
+                27px 27px #c23321,
+                28px 28px #c23321,
+                29px 29px #c23321,
+                30px 30px #c23321,
+                31px 31px #c23321,
+                32px 32px #c23321,
+                33px 33px #c23321,
+                34px 34px #c23321,
+                35px 35px #c23321;
   }
 
 {% endhighlight %}
