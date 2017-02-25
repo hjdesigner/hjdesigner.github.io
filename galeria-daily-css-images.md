@@ -10,6 +10,84 @@ tag: Daily CSS Images, Images pure css, Desenhando com CSS, Galeria Daily CSS Im
     <h1>Daily CSS Images</h1>
     <p>Minha galeria do desafio 50 dias desenhando imagens com CSS <3</p>
     <div class="box-semanas">
+    <h2>Semana #6</h2>
+    <ul>
+      <li>
+        <figure>
+          <a href="http://codepen.io/hjdesigner/pen/JWPBPv" target="_black">
+            <img src="http://s3-us-west-2.amazonaws.com/m.cdpn.io/screenshot-coming-soon-small.png">
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <a href="http://codepen.io/hjdesigner/pen/LWPBPB" target="_black">
+            <img src="http://s3-us-west-2.amazonaws.com/m.cdpn.io/screenshot-coming-soon-small.png">
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <a href="http://codepen.io/hjdesigner/pen/ZeEeVZ" target="_black">
+            <img src="http://s3-us-west-2.amazonaws.com/m.cdpn.io/screenshot-coming-soon-small.png">
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <a href="http://codepen.io/hjdesigner/pen/mWyVpE" target="_black">
+            <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.mWyVpE.small.a7a77351-4036-48d7-a6d6-19a796c502d8.png">
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <a href="http://codepen.io/hjdesigner/pen/NpPMNb" target="_black">
+            <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.NpPMNb.small.d9bbe9fb-a59c-4eb9-9e77-afcab8b22afc.png">
+          </a>
+        </figure>
+      </li>
+
+    </ul>
+    <h2>Semana #5</h2>
+    <ul>
+      <li>
+        <figure>
+          <a href="http://codepen.io/hjdesigner/pen/xgMMQw" target="_black">
+            <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.xgMMQw.small.9edb9789-1b10-475e-b563-08101b3b353f.png">
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <a href="http://codepen.io/hjdesigner/pen/bgZOPw" target="_black">
+            <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.bgZOPw.small.1818e65a-6f6e-4be1-af5b-1b0537b24b06.png">
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <a href="http://codepen.io/hjdesigner/pen/vgMdEq" target="_black">
+            <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.vgMdEq.small.853f11e7-8b31-4b22-9911-481129503406.png">
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <a href="http://codepen.io/hjdesigner/pen/RKzWWr" target="_black">
+            <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.RKzWWr.small.d37378d1-9258-46d3-b16e-737829730964.png">
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <a href="http://codepen.io/hjdesigner/pen/EZBzBp" target="_black">
+            <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.EZBzBp.small.d583f0ec-920c-461d-9f31-4a27544afc52.png">
+          </a>
+        </figure>
+      </li>
+
+    </ul>
     <h2>Semana #4</h2>
     <ul>
       <li>
@@ -37,6 +115,13 @@ tag: Daily CSS Images, Images pure css, Desenhando com CSS, Galeria Daily CSS Im
         <figure>
           <a href="http://codepen.io/hjdesigner/pen/NdeawO" target="_black">
             <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.NdeawO.small.17c17af0-b78d-4ae0-85a0-7b88c3bb0ba0.png">
+          </a>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <a href="http://codepen.io/hjdesigner/pen/QdzXVj" target="_black">
+            <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.QdzXVj.small.1bc5ddea-5250-4252-95fe-1c09fb41192b.png">
           </a>
         </figure>
       </li>
