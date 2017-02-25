@@ -97,6 +97,17 @@ h1:after{
         transform: rotate(360deg);
     }
 }
+@-webkit-keyframes preloaders-5{
+    0%{
+      left: 0;
+    }
+    50%{
+      left: 150px;
+    }
+    100%{
+      left: 0;
+    }
+}
 /* PRELOADER 1 */
 .box-preloaders{
     width: 100%;
@@ -207,4 +218,22 @@ h1:after{
     top: 50px;
     background-color: #2E2929;
     border-radius: 50%;
+}
+.preloaders-5 {
+    width: 200px;
+    height: 20px;
+    float: left;
+    position: relative;
+    margin: 100px 0 0 150px;
+    background-color: #2E2929;
+}
+.preloaders-5:after {
+    content: "";
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #FF1493;
+    animation: preloaders-5 1s linear infinite;
 }
