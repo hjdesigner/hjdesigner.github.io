@@ -386,6 +386,22 @@ tag: Daily CSS Images, Images pure css, Desenhando com CSS, Galeria Daily CSS Im
           </figure>
         </li>
 
+        <li>
+          <figure>
+            <a href="http://codepen.io/hjdesigner/pen/EWEvOx" target="_black">
+              <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.EWEvOx.small.070fd511-025c-4e5f-b1b8-a99ebcde30b7.png">
+            </a>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <a href="http://codepen.io/hjdesigner/pen/vxjJpN" target="_black">
+              <img src="http://s3-us-west-2.amazonaws.com/i.cdpn.io/299715.vxjJpN.small.d6b05598-7ea1-4504-9d6e-499bb5712052.png">
+            </a>
+          </figure>
+        </li>
+
       </ul>
     </div>
 
