@@ -78,7 +78,7 @@ tag: Projetos Henrique Rodrigues, Projetos Coisa de Dev
 				</div>
 
 					<figure class="cards-image">
-						<img src="http://henriquemelanda.com.br/simple-grid-css/images/simple-grid-css.jpeg" alt="Simple Grid CSS">
+						<img src="http://henriquemelanda.com.br/simple-grid-css/images/simple-grid-css.jpg" alt="Simple Grid CSS">
 					</figure>
 
 						<div class="tags">
