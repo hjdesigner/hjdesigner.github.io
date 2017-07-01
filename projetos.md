@@ -11,6 +11,84 @@ tag: Projetos Henrique Rodrigues, Projetos Coisa de Dev
 
 <div class="page-content">
   <div class="page-center">
+		
+		<section class="cards">
+
+			<a href="http://henriquemelanda.com.br/css-padawan/" target="_blank">
+				<div class="cards-titulo">
+					<h2>CSS Padawan</h2>
+				</div>
+
+					<figure class="cards-image">
+						<img src="http://henriquemelanda.com.br/css-padawan/image/chatbot-css-padawan.jpg" alt="CSS Padawan">
+					</figure>
+
+						<div class="tags">
+							<span>Open Source</span>
+							<span>CHATBOT</span>
+						</div>
+			</a>
+
+		</section>
+
+		<section class="cards">
+
+			<a href="http://henriquemelanda.com.br/battery-status-api/" target="_blank">
+				<div class="cards-titulo">
+					<h2>Battery Status API</h2>
+				</div>
+
+					<figure class="cards-image">
+						<img src="http://henriquemelanda.com.br/battery-status-api/image/battery-status-api.jpg" alt="Battery Status API">
+					</figure>
+
+						<div class="tags">
+							<span>Open Source</span>
+							<span>HTML API</span>
+						</div>
+			</a>
+
+		</section>
+
+		<section class="cards">
+
+			<a href="http://henriquemelanda.com.br/vibration-api/" target="_blank">
+				<div class="cards-titulo">
+					<h2>Vibration API</h2>
+				</div>
+
+					<figure class="cards-image">
+						<img src="http://henriquemelanda.com.br/vibration-api/image/vibration-api.jpg" alt="Vibration API">
+					</figure>
+
+						<div class="tags">
+							<span>Open Source</span>
+							<span>HTML API</span>
+						</div>
+			</a>
+
+		</section>
+
+		
+		<section class="cards">
+
+			<a href="http://henriquemelanda.com.br/simple-grid-css/" target="_blank">
+				<div class="cards-titulo">
+					<h2>Simple Grid CSS</h2>
+				</div>
+
+					<figure class="cards-image">
+						<img src="http://henriquemelanda.com.br/simple-grid-css/images/simple-grid-css.jpeg" alt="Simple Grid CSS">
+					</figure>
+
+						<div class="tags">
+							<span>Open Source</span>
+							<span>CSS (Sass)</span>
+						</div>
+			</a>
+
+		</section>	
+
 		<section class="cards">
 
 			<a href="http://www.henriquemelanda.com.br/css-components" target="_blank">
@@ -28,94 +106,6 @@ tag: Projetos Henrique Rodrigues, Projetos Coisa de Dev
 						</div>
 			</a>
 
-		</section>
-		<section class="cards">
-
-			<a href="http://www.benevento.com.br" target="_blank">
-				<div class="cards-titulo">
-					<h2>Benevento</h2>
-				</div>
-
-					<figure class="cards-image">
-						<img src="../assests/img/benevento.jpg" alt="Benevento">
-					</figure>
-
-						<div class="tags">
-							<span>CSS (Sass)</span>
-							<span>HTML</span>
-							<span>Jquery</span>
-							<span>Grunt</span>
-							<span>VTEX</span>
-						</div>
-			</a>
-
-		</section>
-
-		<section class="cards">
-
-			<a href="http://www.honeybe.com.br/" target="_blank">
-				<div class="cards-titulo">
-					<h2>Honeybe</h2>
-				</div>
-
-					<figure class="cards-image">
-						<img src="../assests/img/honeybe.jpg" alt="Honeybe">
-					</figure>
-
-						<div class="tags">
-							<span>CSS (Sass)</span>
-							<span>HTML</span>
-							<span>Jquery</span>
-							<span>Grunt</span>
-							<span>VTEX</span>
-							<span>Google Tag Manager</span>
-						</div>
-			</a>
-
-		</section>
-		<section class="cards">
-
-			<a href="http://www.trifil.com.br/" target="_blank">
-				<div class="cards-titulo">
-					<h2>Trifil</h2>
-				</div>
-
-					<figure class="cards-image">
-						<img src="../assests/img/trifil.jpg" alt="Trifil">
-					</figure>
-
-						<div class="tags">
-							<span>CSS (Sass)</span>
-							<span>HTML</span>
-							<span>Jquery</span>
-							<span>Grunt</span>
-							<span>VTEX</span>
-							<span>Google Tag Manager</span>
-						</div>
-			</a>
-
-		</section>
-		<section class="cards">
-
-			<a href="http://www.fitbysue.com/" target="_blank">
-				<div class="cards-titulo">
-					<h2>Fitbysue</h2>
-				</div>
-
-					<figure class="cards-image">
-						<img src="../assests/img/fitbysue.jpg" alt="Fitbysue">
-					</figure>
-
-						<div class="tags">
-							<span>CSS (Sass)</span>
-							<span>HTML</span>
-							<span>Jquery</span>
-							<span>Grunt</span>
-							<span>VTEX</span>
-							<span>Google Tag Manager</span>
-						</div>
-			</a>
-
-		</section>
+		</section>		
 	</div>
 </div>
