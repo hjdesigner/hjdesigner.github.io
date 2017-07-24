@@ -16,6 +16,25 @@ tag: Projetos Henrique Rodrigues, Projetos Coisa de Dev
 
 			<a href="http://henriquemelanda.com.br/css-padawan/" target="_blank">
 				<div class="cards-titulo">
+					<h2>HTML5 Ambient Light API - Demo</h2>
+				</div>
+
+					<figure class="cards-image">
+						<img src="http://henriquemelanda.com.br/ambient-light-api/image/ambient-light-api.jpg" alt="HTML5 Ambient Light API - Demo">
+					</figure>
+
+						<div class="tags">
+							<span>Open Source</span>
+							<span>HTML5 API</span>
+						</div>
+			</a>
+
+		</section>
+		
+		<section class="cards">
+
+			<a href="http://henriquemelanda.com.br/css-padawan/" target="_blank">
+				<div class="cards-titulo">
 					<h2>CSS Padawan</h2>
 				</div>
 
@@ -44,7 +63,7 @@ tag: Projetos Henrique Rodrigues, Projetos Coisa de Dev
 
 						<div class="tags">
 							<span>Open Source</span>
-							<span>HTML API</span>
+							<span>HTML5 API</span>
 						</div>
 			</a>
 
@@ -63,7 +82,7 @@ tag: Projetos Henrique Rodrigues, Projetos Coisa de Dev
 
 						<div class="tags">
 							<span>Open Source</span>
-							<span>HTML API</span>
+							<span>HTML5 API</span>
 						</div>
 			</a>
 
