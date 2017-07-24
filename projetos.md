@@ -16,7 +16,7 @@ tag: Projetos Henrique Rodrigues, Projetos Coisa de Dev
 
 			<a href="http://henriquemelanda.com.br/css-padawan/" target="_blank">
 				<div class="cards-titulo">
-					<h2>HTML5 Ambient Light API - Demo</h2>
+					<h2>HTML5 Ambient Light API</h2>
 				</div>
 
 					<figure class="cards-image">
