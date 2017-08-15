@@ -24,9 +24,11 @@ function ajaxHtml(){
   url = input.value;
   if( url !== '' && url.match(urlValidator)){
     xhr.open('GET', url);
+    xhr.withCredentials = true;
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.setRequestHeader("Access-Control-Allow-Methods", "GET");
     xhr.setRequestHeader("Access-Control-Allow-Headers", "X-Authorization,X-Requested-With");
+    xhr.setRequestHeader("Access-Control-Allow-Credentials", true);
     xhr.onreadystatechange = () => {
       if(xhr.readyState === 3){
         loader.classList.add('is-active');
