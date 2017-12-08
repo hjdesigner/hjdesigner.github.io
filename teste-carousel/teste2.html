@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/teste.css">
+</head>
+<body>
+<div class="slider js_slider">
+  <div class="frame js_frame">
+    <ul class="slides js_slides">
+      <li class="js_slide">1A</li>
+      <li class="js_slide">2A</li>
+      <li class="js_slide">3A</li>
+      <li class="js_slide">4A</li>
+      <li class="js_slide">5A</li>
+      <li class="js_slide">6A</li>
+      <li class="js_slide">1B</li>
+      <li class="js_slide">2B</li>
+      <li class="js_slide">3B</li>
+      <li class="js_slide">4B</li>
+      <li class="js_slide">5B</li>
+      <li class="js_slide">6B</li>
+      <li class="js_slide">1C</li>
+      <li class="js_slide">2C</li>
+      <li class="js_slide">3C</li>
+      <li class="js_slide">4C</li>
+      <li class="js_slide">5C</li>
+      <li class="js_slide">6C</li>
+    </ul>
+  </div>
+  <span class="js_prev">&lt;</span>
+  <span class="js_next">&gt;</span>
+  <ul class="slider_navigation_dots"></ul>
+</div>
+  <script src="./js/lory.min.js"></script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var slidesToScroll = 6;
+      var slider = document.querySelector('.js_slider');
+      var slideCount = slider.querySelectorAll('.js_slide').length / slidesToScroll;
+      var dotContainer = slider.querySelector('.slider_navigation_dots');
+      var templateListItem = document.createElement('li');
+      
+      // http://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe
+      var stop = false;
+      var frameCount = 0;
+      var fps, fpsInterval, startTime, now, then, elapsed;
+
+      // handle the slider events
+      function handleEvents(e) {
+        if (e.type === 'before.lory.init') {
+          for (var i = 0, len = slideCount; i < len; i++) {
+            var clone = templateListItem.cloneNode();
+            dotContainer.appendChild(clone);
+          }
+          dotContainer.childNodes[0].classList.add('active');
+        }
+        if (e.type === 'after.lory.init') {
+          for (var i = 0, len = slideCount; i < len; i++) {
+            dotContainer.childNodes[i].addEventListener('click', function(e) {
+              resetTimer();
+              lorySlider.slideTo(Array.prototype.indexOf.call(dotContainer.childNodes, e.target) * slidesToScroll);
+            });
+          }
+        }
+        if (e.type === 'after.lory.slide') {
+          for (var i = 0, len = dotContainer.childNodes.length; i < len; i++) {
+            dotContainer.childNodes[i].classList.remove('active');
+          }
+          dotContainer.childNodes[(e.detail.currentSlide / slidesToScroll) - 1].classList.add('active');
+        }
+      }
+
+      // init events to handle
+      slider.addEventListener('before.lory.init', handleEvents);
+      slider.addEventListener('after.lory.init', handleEvents); 
+      slider.addEventListener('after.lory.slide', handleEvents); 
+
+      // init the slider
+      var lorySlider = lory(slider, {
+        rewind: true,
+        infinite: slidesToScroll,
+        slidesToScroll: slidesToScroll,
+        enableMouseEvents: true
+      });
+      
+      // begin animation (autoplay)
+      function startAnimating(fps) {
+          fpsInterval = 1000 / fps;
+          then = Date.now();
+          startTime = then;
+          animate();
+      }
+      
+      // animate (autoplay)
+      function animate() {
+        requestAnimationFrame(animate);
+        
+        now = Date.now();
+        elapsed = now - then;
+
+        if (elapsed > fpsInterval && !stop) {
+          then = now - (elapsed % fpsInterval);
+          lorySlider.next();
+        }
+      }
+      
+      // reset timer
+      function resetTimer() {
+        now = Date.now();
+        elapsed = now - then;
+        then = now - (elapsed % fpsInterval);
+      }
+      
+      // start the animation process with seed time
+      startAnimating(.2); // every five seconds
+      
+      // mouseover 
+      slider.addEventListener('mouseover', function(e) {
+        stop = true;
+      }); 
+      
+      // mouseout
+      slider.addEventListener('mouseout', function(e) {
+        resetTimer();
+        stop = false;
+      });
+
+    });
+
+  </script>
+</body>
+</html>
