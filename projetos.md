@@ -12,7 +12,26 @@ tag: Projetos Henrique Rodrigues, Projetos Coisa de Dev
 <div class="page-content">
   <div class="page-center">
 		
-		<section class="cards">
+    <section class="cards">
+
+			<a href="https://meu-curriculo.wedeploy.io/" target="_blank">
+				<div class="cards-titulo">
+					<h2>Meu currículo GitHub</h2>
+				</div>
+
+					<figure class="cards-image">
+						<img src="http://henriquemelanda.com.br/assests/img/capa.jpg" alt="Meu currículo GitHub">
+					</figure>
+
+						<div class="tags">
+							<span>Open Source</span>
+              <span>Github</span>
+              <span>JS ES6</span>
+						</div>
+			</a>
+
+		</section>
+    <section class="cards">
 
 			<a href="http://henriquemelanda.com.br/ambient-light-api/" target="_blank">
 				<div class="cards-titulo">
