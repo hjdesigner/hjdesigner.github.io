@@ -3,6 +3,7 @@
 	var arrayLocal = [];
 	var arrayDetails = [];
 	var arrayAddress = [];
+	var arrayContact = [];
 	var beaches = [
   	['Mooca', -23.5606307, -46.5854571],
     ['Tatuape', -23.5467317, -46.5740591],
@@ -285,7 +286,7 @@
 				cidade: $('[data-id="cidade"]').val(),
 				estado: $('[data-id="estado"]').val(),
 				loja: $('.wizard-address-store__local .store').html(),
-				anddress: $('.wizard-address-store__local .address').html(),
+				address: $('.wizard-address-store__local .address').html(),
 			});
 			$('[data-id="addressSelect"]').removeClass('hide');
 			nextAddress();
@@ -371,9 +372,16 @@
 				alert('Por favor selecione uma forma de contato')
 				return;
 			}
+			arrayContact = [];
+			arrayContact.push({
+				name: inputName,
+				phone: inputPhone,
+				email: inputEmail
+			});
 			$('[data-id="wizard-stage"]').hide();
 			$('.wizard-banner').show();
 			$('[data-id="wizard-success"]').show();
+			success();
 		});
 		$('[data-id="endereco"]').on('click', function() {
 			$('.wizard-contact').hide();
@@ -383,12 +391,30 @@
 		});
 	}
 
+	function success() {
+		var room1 = arrayDetails[0].room1 !== '' ? arrayDetails[0].room1 + ' m ' : '';
+		var room2 = arrayDetails[0].room2 !== '' ? ' / ' + arrayDetails[0].room2 + ' m' : '';
+		for(i = 0; i <= arrayLocal.length; i++) {
+			var room = i !== arrayLocal.length ? arrayLocal[i] + ', ' : arrayLocal[i];
+			$('[data-id="success-room"]').append(room);
+		}
+		$('[data-id="nomeProject"]').html(arrayDetails[0].name);
+		$('[data-id="success-measures"]').append(room1);
+		$('[data-id="success-measures"]').append(room2);
+		$('[data-id="success-description"]').html(arrayDetails[0].description);
+		$('[data-id="success-photo-1"]').html(arrayDetails[0].image1 !== '' ? '<img src="'+ arrayDetails[0].image1 +'" >' : '');
+		$('[data-id="success-photo-2"]').html(arrayDetails[0].image2 !== '' ? '<img src="'+ arrayDetails[0].image2 +'" >' : '');
+		$('[data-id="success-photo-3"]').html(arrayDetails[0].image3 !== '' ? '<img src="'+ arrayDetails[0].image3 +'" >' : '');
+		$('[data-id="success-photo-4"]').html(arrayDetails[0].image4 !== '' ? '<img src="'+ arrayDetails[0].image4 +'" >' : '');
+		$('[data-id="success-store"]').html(arrayAddress[0].loja);
+		$('[data-id="success-address"]').html(arrayAddress[0].address);
+		$('[data-id="success-email"]').html(arrayContact[0].email !== '' ? '<span>E-mail:</span> ' + arrayContact[0].email : '');
+		$('[data-id="success-phone"]').html(arrayContact[0].phone !== '' ? '<span>Telefone:</span> ' + arrayContact[0].phone : '');
+	}
+
 	$(document).ready(function(){
 		checkLocal();
 	});
-	$(window).load(function() {
-		
-	})
 })(jQuery)
 
 
