@@ -638,7 +638,7 @@
 						<figure class="wizard-banner__lobo">
 							<img src="./images/logo-moveis-planejados.svg" alt="Moveis plenejados">
 						</figure>
-						<p>Parabéns! Você deu o primeiro passo para realização do seu sonho.</p>
+						<p id="wizard-success-text">Parabéns! Você deu o primeiro passo para realização do seu sonho.</p>
 					</div>
 				</div>
 				<div class="center" data-id="wizard-success">
@@ -647,34 +647,34 @@
 							<p>Pedido <span>Enviado!</span></p>
 						</div>
 						<div class="wizard-success__project">
-							<p data-id="nomeProject"></p>
-							<p><span>nº</span> [00000000]</p>
+							<p data-id="nomeProject" id="wizard-success-nameProject"></p>
+							<p id="wizard-success-numberProject"><span>nº</span> [00000000]</p>
 							<p class="wizard-success__project-abstract">Este resumo será enviado para nossa equipe e para seu e-mail!</p>
 						</div>
 						<div class="wizard-success__info">
 							<div class="wizard-success__room">
 								<p>Cômodo</p>
-								<p data-id="success-room"></p>
+								<p data-id="success-room" id="wizard-success-room"></p>
 							</div>
 							<div class="wizard-success__details">
 								<p>Detalhes Medidas</p>
-								<p data-id="success-measures"></p>
+								<p data-id="success-measures" id="wizard-success-meassures"></p>
 								<p>Descrição</p>
-								<p data-id="success-description"></p>
+								<p data-id="success-description" id="wizard-success-descriotion"></p>
 							</div>
 							<div class="wizard-success__photos">
 								<p>Images</p>
-								<figure data-id="success-photo-1"></figure>
-								<figure data-id="success-photo-2"></figure>
-								<figure data-id="success-photo-3"></figure>
-								<figure data-id="success-photo-4"></figure>
+								<figure data-id="success-photo-1" id="wizard-success-photo1"></figure>
+								<figure data-id="success-photo-2" id="wizard-success-photo2"></figure>
+								<figure data-id="success-photo-3" id="wizard-success-photo3"></figure>
+								<figure data-id="success-photo-4" id="wizard-success-photo4"></figure>
 							</div>
 							<div class="wizard-success__store">
 								<figure><img src="./images/pin.png" alt="Pin"></figure>
 								<div class="wizard-success__store-text">
 									<p>Loja mais próxima</p>
-									<p class="store" data-id="success-store"></p>
-									<p data-id="success-address"></p>
+									<p class="store" data-id="success-store" id="wizard-success-store"></p>
+									<p data-id="success-address" id="wizard-success-store-address"></p>
 								</div>
 							</div>
 						</div>
@@ -682,69 +682,69 @@
 					<div class="wizard-success__right">
 						<div class="wizard-success__contact">
 							<p>Entraremos em contato com você em até 2 dias úteis através do:</p>
-							<p class="contact-different" data-id="success-email"><span>e-mail:</span></p>
-							<p class="contact-different" data-id="success-phone"><span>Telefone:</span></p>
+							<p class="contact-different" data-id="success-email" id="wizard-success-email"><span>e-mail:</span></p>
+							<p class="contact-different" data-id="success-phone" id="wizard-success-phone"><span>Telefone:</span></p>
 						</div>
 					</div>
 				</div>
 				<div class="center" data-id="wizard-stage">
             <div id="ctl00_Conteudo_3140" class="area-3-1">
 							<section class="wizard-header">
-								<h1>Pedido de orçamento <span>móveis planejados</span></h1>
+								<h1 id="wizard-title-geral">Pedido de orçamento <span>móveis planejados</span></h1>
 							</section>  
             </div>
             <div id="ctl00_Conteudo_3140" class="area-3-2">
             	<aside class="wizard-session">
-								<h3>1. Detalhes do Projeto</h3>
+								<h3 id="wizard-title-nav-details">1. Detalhes do Projeto</h3>
 								<ul>
-									<li data-id="comodo" class="active">Cômodo <span data-id="roomsSelect"></span></li>
-									<li data-id="detalhes">Detalhes e  Medidas <span data-id="detailsSelect" class="hide">Medidas e fotos enviadas</span></li>
+									<li data-id="comodo" class="active" id="wizard-nav-room">Cômodo <span data-id="roomsSelect"></span></li>
+									<li data-id="detalhes" id="wizard-nav-details">Detalhes e  Medidas <span data-id="detailsSelect" class="hide">Medidas e fotos enviadas</span></li>
 								</ul>
-								<h3>Informações pessoais</h3>
+								<h3 id="wizard-title-nav-information">Informações pessoais</h3>
 								<ul>
-									<li data-id="endereco">Endereço<span data-id="addressSelect" class="hide">Endereço confirmado</span></li>
-									<li data-id="contato">Contato</li>
+									<li data-id="endereco" id="wizard-nav-address">Endereço<span data-id="addressSelect" class="hide">Endereço confirmado</span></li>
+									<li data-id="contato" id="wizard-nav-contact">Contato</li>
 								</ul>
 							</aside>
 						</div>
 						<div id="ctl00_Conteudo_3140" class="area-3-3">
 							<section class="wizard-local">
 								<div class="wizard-local__text">
-									<h2>Onde você colocará seu novo movel planejado?</h2>
+									<h2 id="wizard-local-title">Onde você colocará seu novo movel planejado?</h2>
 									<p>Para proseguir escolha até 2 opções</p>
 								</div>
 								<ul class="wizard-local__list">
-									<li data-id="Casa completa">
+									<li data-id="Casa completa" id="wizard--local-casa-completa">
 										<figure>
 											<img src="./images/cozinha.png" alt="">
 										</figure>
 										<p>Casa Completa</p>
 									</li>
-									<li data-id="Cozinha">
+									<li data-id="Cozinha" id-"wizard-local-cozinha">
 										<figure>
 											<img src="./images/cozinha.png" alt="">
 										</figure>
 										<p>Cozinha</p>
 									</li>
-									<li data-id="Dormitório">
+									<li data-id="Dormitório" id="wizard-local-dormitorio">
 										<figure>
 											<img src="./images/cozinha.png" alt="">
 										</figure>
 										<p>Dormitório</p>
 									</li>
-									<li data-id="Sala">
+									<li data-id="Sala" id="wizard-local-sala">
 										<figure>
 											<img src="./images/cozinha.png" alt="">
 										</figure>
 										<p>Sala</p>
 									</li>
-									<li data-id="Banheiro">
+									<li data-id="Banheiro" id="wizard-local-banheiro">
 										<figure>
 											<img src="./images/cozinha.png" alt="">
 										</figure>
 										<p>Banheiro</p>
 									</li>
-									<li data-id="Área De Serviço">
+									<li data-id="Área De Serviço" id="wizard-local-area-de-servico">
 										<figure>
 											<img src="./images/cozinha.png" alt="">
 										</figure>
@@ -752,73 +752,73 @@
 									</li>
 								</ul>
 								<div class="wizard-local__buttons">
-									<button data-id="next-local" disabled>Próximo</button>
-									<p><span data-id="jump-local">Pular etapa</span></p>
+									<button data-id="next-local" id="wizard-next-local" disabled>Próximo</button>
+									<p><span data-id="jump-local" id="wizard-jump-local">Pular etapa</span></p>
 								</div>
 							</section>
 							<section class="wizard-details">
 								<div class="wizard-details__text">
-									<h2>Para melhor atendê-lo, nos forneça alguns detalhes do projeto dos sonhos</h2>
+									<h2 id="wizard-details-title">Para melhor atendê-lo, nos forneça alguns detalhes do projeto dos sonhos</h2>
 								</div>
 								<div class="wizard-details-left">
 									<div class="wizard-details__name">
-										<label for="nameProject">Nome do projeto:</label>
-										<input type="text" name="nameProject" data-id="nameProject">
+										<label for="nameProject" id="wizard-details-label-name">Nome do projeto:</label>
+										<input type="text" name="nameProject" data-id="nameProject" id="wizard-datails-input-name">
 										<p><span data-id="countdowProject">00</span>/24 caracteres</p>
 									</div>
 									<div class="wizard-details__measures">
 										<p>Medidas dos cômodos <span>(em metros)</span></p>
 										<div class="wizard-details__rooms1">
-											<p data-is="romm1">[Cômodo 1]</p>
+											<p data-is="romm1" id="wizard-details-room1">[Cômodo 1]</p>
 											<div class="wizard-details-input__height">
-												<input type="number" name="roomHeight" data-id="room1Height">
-												<label for="rommHeight">Altura</label>
+												<input type="number" name="roomHeight" data-id="room1Height" id="wizard-details-room1-height">
+												<label for="rommHeight" id="wizard-details-room1-label-height">Altura</label>
 											</div>
 											<div class="wizard-details-input__width">
-												<input type="number" name="roomWidth" data-id="room1Width">
-												<label for="rommWidth">Largura</label>
+												<input type="number" name="roomWidth" data-id="room1Width" id="wizard-details-room1-width">
+												<label for="rommWidth" id="wizard-details-room1-label-width">Largura</label>
 											</div>
 										</div>
 										<div class="wizard-details__rooms2">
-											<p data-is="romm2">[Cômodo 2]</p>
+											<p data-is="romm2" data-id="wizard-details-room2">[Cômodo 2]</p>
 											<div class="wizard-details-input__height">
-												<input type="number" name="roomHeight" data-id="room2Height">
-												<label for="rommHeight">Altura</label>
+												<input type="number" name="roomHeight" data-id="room2Height" id="wizard-details-roomw-height">
+												<label for="rommHeight" id="wizard-details-room1-label-height">Altura</label>
 											</div>
 											<div class="wizard-details-input__width">
-												<input type="number" name="roomWidth" data-id="room2Width">
-												<label for="rommWidth">Largura</label>
+												<input type="number" name="roomWidth" data-id="room2Width" id="wizard-details-room2-width">
+												<label for="rommWidth" id="wizard-details-room2-label-width">Largura</label>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="wizard-details-rigth">
-									<label for="description">Se quiser, forneça uma breve descrição do seu projeto</label>
-									<textarea name="description" data-id="description"></textarea>
+									<label for="description" id="wizard-details-title-description">Se quiser, forneça uma breve descrição do seu projeto</label>
+									<textarea name="description" data-id="description" id="wizard-details-textatea-description"></textarea>
 									<p><span data-id="countdownDescription">000</span>/450 caracteres</p>
 								</div>
 								<div class="wizard-details-upload">
-									<h4>Você também pode enviar a planta do ambiente ou até mesmo fotos de referências de decoração.</h4>
+									<h4 id="wizard-details-title-upload">Você também pode enviar a planta do ambiente ou até mesmo fotos de referências de decoração.</h4>
 									<ul>
-										<li data-id="fileImage1">
+										<li data-id="fileImage1" id="wizard-details-file1">
 											<div class="close" data-id="close1">X</div>
 											<div data-id="file1">
 												<img src="" id="image1">
 											</div>
 										</li>
-										<li data-id="fileImage2">
+										<li data-id="fileImage2" id="wizard-details-file2">
 											<div class="close" data-id="close2">X</div>
 											<div data-id="file2">
 												<img src="" id="image2">
 											</div>
 										</li>
-										<li data-id="fileImage3">
+										<li data-id="fileImage3" id="wizard-details-file3">
 											<div class="close" data-id="close3">X</div>
 											<div data-id="file3">
 												<img src="" id="image3">
 											</div>
 										</li>
-										<li data-id="fileImage4">
+										<li data-id="fileImage4" id="wizard-details-file4">
 											<div class="close" data-id="close4">X</div>
 											<div data-id="file4">
 												<img src="" id="image4">
@@ -828,8 +828,8 @@
 									<p>Dica: Envie fotos com boa resolução (000x000 ou até 00 MB) e arquivos JPG, PNG e PDF.</p>
 								</div>
 								<div class="wizard-details__buttons">
-									<button data-id="next-details">Próximo</button>
-									<p><span data-id="jump-details">Pular etapa</span></p>
+									<button data-id="next-details" id="wizard-details-next">Próximo</button>
+									<p><span data-id="jump-details" id="wizard-details-jump">Pular etapa</span></p>
 								</div>
 								<input type="file" id="fileImage1">
 								<input type="file" id="fileImage2">
@@ -838,41 +838,41 @@
 							</section>
 							<section class="wizard-address">
 								<div class="wizard-address__text">
-									<h2>Por favor, complete seu endereço</h2>
+									<h2 id="wizard-address-title">Por favor, complete seu endereço</h2>
 								</div>
 								<div class="wizard-address__forms">
 									<div class="wizard-address__cep">
-										<label for="cep">CEP</label>
-										<input type="text" name="cep" data-id="cep" disabled value="03191140">
+										<label for="cep" id="wizard-addres-label-cep">CEP</label>
+										<input type="text" name="cep" data-id="cep" id="wizard-addres-input-cep" disabled value="03191140">
 									</div>
 									<div class="wizard-address__rua">
-										<label for="rua">Rua</label>
-										<input type="text" name="rua" data-id="rua" disabled>
+										<label for="rua" id="wizard-addres-label-rua">Rua</label>
+										<input type="text" name="rua" data-id="rua" id="wizard-addres-input-rua" disabled>
 									</div>
 									<div class="wizard-address__numero">
-										<label for="numero">Número</label>
-										<input type="text" name="numero" data-id="numero" autofocus>
+										<label for="numero" id="wizard-addres-label-numero">Número</label>
+										<input type="text" name="numero" data-id="numero" id="wizard-addres-input-numero" autofocus>
 									</div>
 									<div class="wizard-address__complemento">
-										<label for="complemento">Complemento</label>
-										<input type="text" name="complemento" data-id="complemento">
+										<label for="complemento" id="wizard-addres-label-completmento">Complemento</label>
+										<input type="text" name="complemento" data-id="complemento" id="wizard-addres-input-complemento">
 									</div>
 									<div class="wizard-address__bairro">
-										<label for="bairro">Bairro</label>
-										<input type="text" name="bairro" data-id="bairro" disabled>
+										<label for="bairro" id="wizard-addres-label-bairro">Bairro</label>
+										<input type="text" name="bairro" data-id="bairro" id="wizard-addres-input-bairro" disabled>
 									</div>
 									<div class="wizard-address__cidade">
-										<label for="cidade">Cidade</label>
-										<input type="text" name="cidade" data-id="cidade" disabled>
+										<label for="cidade" id="wizard-addres-label-cidade">Cidade</label>
+										<input type="text" name="cidade" data-id="cidade" id="wizard-addres-input-cidade" disabled>
 									</div>
 									<div class="wizard-address__estado">
-										<label for="estado">Estado</label>
-										<input type="text" name="estado" data-id="estado" disabled>
+										<label for="estado" id="wizard-addres-label-estado">Estado</label>
+										<input type="text" name="estado" data-id="estado" id="wizard-addres-input-estado" disabled>
 									</div>
 								</div>
 								<div class="wizard-address-strore">
 									<div class="wizard-address-store__text">
-										<h4>Qual a loja mais próxima?</h4>
+										<h4 id="wizard-addres-title-store">Qual a loja mais próxima?</h4>
 										<p>É necessário comparecer a loja para concluir o orçamento e acompanhar seu projeto. Não se preocupe, se esta não for a loja mais próxima, você pode escolher outra. </p>
 									</div>
 									<div class="wizard-address-store-item">
@@ -881,17 +881,17 @@
 										</figure>
 										<div class="wizard-address-store__local">
 											<p>Detectamos que a loja mais próxima do local de montagem é:</p>
-											<p class="store">Casas Bahia - Praça Ramos</p>
-											<p class="address">Praça Ramos de Azevedo, 131 São Paulo República, SP 01037-010</p>
+											<p class="store" id="wizard-addres-p-store">Casas Bahia - Praça Ramos</p>
+											<p class="address" id="wizard-addres-p">Praça Ramos de Azevedo, 131 São Paulo República, SP 01037-010</p>
 										</div>
 										<div class="wizard-address-store__buttons">
-											<button>Escolher outra loja</button>
+											<button id="wizard-addres-store-button">Escolher outra loja</button>
 										</div>
 									</div>
 								</div>
 								<div class="wizard-address__buttons">
-									<button data-id="next-address">Próximo</button>
-									<p><span data-id="jump-address">Pular etapa</span></p>
+									<button data-id="next-address" id="wizard-addres-next">Próximo</button>
+									<p><span data-id="jump-address" id="wizard-addres-jump">Pular etapa</span></p>
 								</div>
 
 								
@@ -951,35 +951,35 @@
 							</section>
 							<section class="wizard-contact">
 								<div class="wizard-contact__text">
-									<h2>Estamos quase terminando...<br>Como podemos entrar em contato com você?</h2>
+									<h2 id="wizard-contact-title">Estamos quase terminando...<br>Como podemos entrar em contato com você?</h2>
 								</div>
 								<div class="wizard-contact__forms">
 									<div class="wizard-contact__name">
-										<label for="fullName">Nome Completo</label>
-										<input type="text" name="fullName" data-id="fullName">
+										<label for="fullName" id="wizard-contact-label-name">Nome Completo</label>
+										<input type="text" name="fullName" data-id="fullName" id="wizard-contact-input-name">
 									</div>
 									<div class="wizard-contact__phone">
-										<label for="phone">Telefone</label>
-										<input type="text" name="phone" data-id="phone">
+										<label for="phone" id="wizard-contact-label-phone">Telefone</label>
+										<input type="text" name="phone" data-id="phone" id="wizard-contact-input-phone">
 									</div>
 									<div class="wizard-contact__email">
-										<label for="email">E-mail</label>
-										<input type="text" name="email" data-id="email">
+										<label for="email" id="wizard-contact-email">E-mail</label>
+										<input type="text" name="email" data-id="email" id="wizard-contact-input-email">
 									</div>
 									<div class="wizard-contact__contact">
 										<p>Qual a melhor forma para entrarmos em contato?</p>
 										<div class="wizard-contact__callme">
-											<input id="callme" name="contactCheck" type="radio" value="Me ligue">
-											<label for="callme">Me ligue</label>
+											<input id="callme" name="contactCheck" type="radio" value="Me ligue" id="wizard-contact-input-callme">
+											<label for="callme" id="wizard-contact-label-callme">Me ligue</label>
 										</div>
 										<div class="wizard-contact__callme">
-											<input id="sendemail" name="contactCheck" type="radio" value="Me mande um e-mail">
-											<label for="sendemail">Me mande um e-mail</label>
+											<input id="sendemail" name="contactCheck" type="radio" value="Me mande um e-mail" id="wizard-contact-input-sendemail">
+											<label for="sendemail" id="wizard-contact-label-sendemail">Me mande um e-mail</label>
 										</div>
 									</div>
 									<div class="wizard-contact__buttons">
 										<p>Uma vez que você gerar o pedido você não poderá editá-lo</p>
-										<button data-id="next-contact">Finalizar o pedido</button>
+										<button data-id="next-contact" id="wizard-contact-next">Finalizar o pedido</button>
 									</div>
 								</div>
 							</section>
