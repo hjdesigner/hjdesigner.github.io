@@ -1,4 +1,6 @@
-(function(){
+(function($){
+	'use strict'
+	
 	var itemsCheck = 0;
 	var arrayLocal = [];
 	var arrayDetails = [];
@@ -10,41 +12,44 @@
     ['Metro Tatuape 3', -23.5421352, -46.5761956],
   ];
 
+
+	function scrollHeader() {
+		$('body,html').animate({
+    	scrollTop: $('body').position().top
+    }, 500);
+	}
+
 	function nextLocal() {
-		$('[data-id="comodo"]').removeClass('active');
-		$('[data-id="comodo"]').addClass('finish');
-		$('[data-id="detalhes"]').addClass('active');
+		$('#wizard-nav-room').removeClass('active');
+		$('#wizard-nav-details').addClass('active');
 		$('.wizard-local').hide();
 		$('.wizard-details').show();
 		details();
 	}
 	function nextDetails() {
-		$('[data-id="detalhes"]').removeClass('active');
-		$('[data-id="detalhes"]').addClass('finish');
-		$('[data-id="endereco"]').addClass('active');
+		$('#wizard-nav-details').removeClass('active');
+		$('#wizard-nav-address').addClass('active');
 		$('.wizard-details').hide();
 		$('.wizard-address').show();
 		address();
-		initMap();
 	}
 	function nextAddress() {
-		$('[data-id="endereco"]').removeClass('active');
-		$('[data-id="endereco"]').addClass('finish');
-		$('[data-id="contato"]').addClass('active');
+		$('#wizard-nav-address').removeClass('active');
+		$('#wizard-nav-contact').addClass('active');
 		$('.wizard-address').hide();
 		$('.wizard-contact').show();
 		contact();
 	}
-	function scrollHeader() {
-		$('body,html').animate({
-    	scrollTop: $('.wizard-header').position().top
-    }, 500);
-	}
+
 	function filePreview(image, files, li) {
 		var reader  = new FileReader();
 		var preview = image;
 		var file    = files;
+		var button  = document.querySelector('#wizard-open-upload');
 		li.classList.add('active');
+		if (!button.classList.contains('finish')) {
+			button.classList.add('finish')
+		}
 
 		if ( /\.(jpe?g|png|pdf)$/i.test(file.name) && file.size <= 5242880) {
 			reader.addEventListener("load", function () {
@@ -64,11 +69,6 @@
 			if ($(this).hasClass('active')){
 				$(this).removeClass('active');
 				itemsCheck--;
-				if ($('.wizard-local__list .active').length) {
-					$('[data-id="next-local"]').removeAttr("disabled");
-				} else {
-					$('[data-id="next-local"]').attr('disabled', 'true');
-				}
 				return
 			}
 			if (itemsCheck >= 2) {
@@ -76,11 +76,6 @@
 			}
 			itemsCheck++;
 			$(this).addClass('active');
-			if ($('.wizard-local__list .active').length) {
-				$('[data-id="next-local"]').removeAttr("disabled");
-			} else {
-				$('[data-id="next-local"]').attr('disabled', 'true');
-			}
 		})
 		$('[data-id="next-local"]').on('click', function() {
 			arrayLocal = [];
@@ -104,11 +99,36 @@
 		var inputProject = $('[data-id="nameProject"]');
 		var inputDescription = $('[data-id="description"]');
 
-		$('[data-id="comodo"]').on('click', function() {
+		$('#wizard-nav-room').on('click', function() {
 			$('.wizard-details').hide();
 			$('.wizard-contact').hide();
 			$('.wizard-address').hide();
 			$('.wizard-local').show();
+		});
+		
+		$('#wizard-open-description').on('click', function() {
+			$('.wizard-details-rigth').show();
+			$('body').addClass('wizard-no-scroll');
+			scrollHeader();
+		});
+		$('#wizard-description-cancel').on('click', function() {
+			$('.wizard-details-rigth').hide();
+			$('body').removeClass('wizard-no-scroll');
+		});
+		$('#wizard-description-save').on('click', function() {
+			var valueDescription = $('#wizard-details-textatea-description').val();
+			if(valueDescription !== '') {
+				$('.wizard-details-rigth').hide();
+				$('body').removeClass('wizard-no-scroll');
+				$('#wizard-open-description').addClass('finish');
+				return
+			}
+			$('.wizard-details-rigth').hide();
+			$('body').removeClass('wizard-no-scroll');
+			$('#wizard-open-description').removeClass('finish');
+		});
+		$('#wizard-open-upload').on('click', function () {
+			$('.wizard-details-upload').show();
 		});
 
 		inputProject.on('keydown', function() {
@@ -140,7 +160,6 @@
 			}
 			countdownDescription.html($(this).val().length);
 		});
-
 		if (arrayLocal.length == 0) {
 			$('.wizard-details__measures').hide();
 		} else if (arrayLocal.length == 1) {
@@ -227,17 +246,7 @@
 			nextDetails();
 			scrollHeader();
 		});
-		$('[data-id="jump-details"]').on('click', function() {
-			nextDetails();
-			scrollHeader();
-		});
-	}
-	function selectStore(title){
-		$('.wizard-modal__input').hide();
-		$('.wizard-modal__list').hide();
-		$('.wizard-modal-item__header p').html(title);
-		$('.wizard-modal-item__footer button').attr('data-title', title);
-		$('.wizard-modal-item').show();
+		
 	}
 	function address() {
 		var inputCep = $('[data-id="cep"]');
@@ -253,27 +262,22 @@
 					});
 			}
 		}
-		$('.wizard-modal__list li').on('click', function() {
-			var title = $(this).find('p').html();
-			selectStore(title);
+		$('.wizard-address-store__buttons #wizard-addres-store-button').on('click', function(){
+			scrollHeader();
+			$('body').addClass('wizard-no-scroll');
+			$('#wizard-modal').fadeIn();
 		});
-		$('.wizard-modal-item__header i').on('click', function() {
-			$('.wizard-modal__input').show();
-			$('.wizard-modal__list').show();
-			$('.wizard-modal-item').hide();
-		});
-		$('.wizard-address-store__buttons button').on('click', function(){
-			$('.wizard-modal').fadeIn();
-		});
-		$('.wizard-modal__header-close').on('click', function(){
-			$('.wizard-modal').fadeOut();
+		$('#wizard-modal .wizard-modal__header-close').on('click', function(){
+			$('#wizard-modal').fadeOut();
+			$('body').removeClass('wizard-no-scroll');
 		})
-		$('.wizard-modal-item__footer button').on('click', function() {
+		$('#wizard-modal .wizard-modal__list li button').on('click', function() {
+			$('body').removeClass('wizard-no-scroll');
 			var title = $(this).attr('data-title');
-			var address = $('.wizard-modal-item__content .address').html();
+			var address = $(this).attr('data-address');
 			$('.wizard-address-store__local .store').html(title);
 			$('.wizard-address-store__local .address').html(address);
-			$('.wizard-modal').fadeOut();
+			$('#wizard-modal').fadeOut();
 		});
 		$('[data-id="next-address"]').on('click', function() {
 			arrayAddress = []
@@ -292,47 +296,13 @@
 			nextAddress();
 			scrollHeader();
 		})
-		$('[data-id="jump-address"]').on('click', function () {
-			nextAddress();
-			scrollHeader();
-		})
-		$('[data-id="detalhes"]').on('click', function() {
+		$('#wizard-nav-details').on('click', function() {
 			$('.wizard-address').hide();
 			$('.wizard-contact').hide();
 			$('.wizard-local').hide();
 			$('.wizard-details').show();
 		});
 	}
-	function setMarkers(map) {
-    var image = {
-    	url: 'https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png',
-      size: new google.maps.Size(45, 45),
-      origin: new google.maps.Point(0, 0),
-			anchor: new google.maps.Point(0, 45),
-    };
-    for (var i = 0; i < beaches.length; i++) {
-			var beach = beaches[i];
-			
-			var marker = new google.maps.Marker({
-      	position: {lat: beach[1], lng: beach[2]},
-        map: map,
-        icon: image,
-      	title: beach[0]
-			});
-			marker.addListener('click', function(e) {
-				selectStore(this.title);
-  		});
-  	}
-  }
-	function initMap() {
-		var map = new google.maps.Map(document.getElementById('wizard-map'), {
-    	zoom: 13,
-      center: {lat: -23.5657732, lng: -46.5713469}
-    });
-
-    setMarkers(map);
-	}
-	
 	function contact() {
 		$('[data-id="phone"]').focusout(function(){
     	var phone, element;
@@ -379,21 +349,19 @@
 				email: inputEmail
 			});
 			$('[data-id="wizard-stage"]').hide();
-			$('.wizard-banner').show();
 			$('[data-id="wizard-success"]').show();
 			success();
 		});
-		$('[data-id="endereco"]').on('click', function() {
+		$('#wizard-nav-address').on('click', function() {
 			$('.wizard-contact').hide();
 			$('.wizard-details').hide();
 			$('.wizard-local').hide();
 			$('.wizard-address').show();
 		});
 	}
-
 	function success() {
-		var room1 = arrayDetails[0].room1 !== undefined ? arrayDetails[0].room1 + ' m ' : '';
-		var room2 = arrayDetails[0].room2 !== undefined ? ' / ' + arrayDetails[0].room2 + ' m' : '';
+		var room1 = arrayDetails[0].room1 !== undefined ? 'Medida: ' + arrayDetails[0].room1 + ' m ' : '';
+		var room2 = arrayDetails[0].room2 !== undefined ? '<br />Medida:  ' + arrayDetails[0].room2 + ' m' : '';
 		for(var i = 0; i <= arrayLocal.length; i++) {
 			var room = i !== arrayLocal.length ? arrayLocal[i] + ', ' : arrayLocal[i];
 			$('[data-id="success-room"]').append(room);
@@ -412,10 +380,7 @@
 		$('[data-id="success-phone"]').html(arrayContact[0].phone !== '' ? '<span>Telefone:</span> ' + arrayContact[0].phone : '');
 	}
 
-	$(document).ready(function(){
+	$(document).ready(function() {
 		checkLocal();
-	});
-})(jQuery)
-
-
-
+	})
+})(jQuery);

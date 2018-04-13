@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="https://m.casasbahia.com.br/assets/css/vendor.css">
+	<link rel="stylesheet" href="./css/app.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="./css/moveis-wizard-mobile.css">
+	<script src="./js/jquery.maskedinput.min.js"></script>
+	<script type="text/javascript" src="js/scripts-wizard-mobile.js"></script>
+</head>
+<body>
+	<div ng-init="navbar.expanded = false" class="container">
+		<div class="row no-gutter">
+			<div class="col-xs-12">
+				<div ng-class="{'navbar-expanded': expanded}" class="navbar">
+					<div class="navbar-line">
+						<div class="navbar-item">
+							<div class="navbar-item-cell">
+								<a ng-click="openMenu()" data-id-elem="btnMenu" class="ic-navbar ic-menu"></a>
+							</div>
+							<div class="navbar-item-cell navbar-item-cell-fill-parent">
+								<a ui-sref="home" href="#/">
+									<img ng-src="https://m.casasbahia.com.br/assets/images/casasbahia-logo.svg" width="130" class="navbar-logo" src="https://m.casasbahia.com.br/assets/images/casasbahia-logo.svg">
+								</a>
+							</div>
+							<div ng-if="!expanded" class="navbar-item-cell navbar-item-cell-search">
+								<a href="" ng-click="expand()" class="ic-navbar ic-search"></a></div><!----><div class="navbar-item-cell"><a ui-sref="cart.detail" data-id-elem="btnCart" class="ic-navbar ic-cart" href="#/carrinho/detalhes"></a><!----></div></div></div><form name="searchForm" action="." novalidate="novalidate" ng-submit="$event.preventDefault();searchForm.$valid &amp;&amp; navbar.search()" class="ng-pristine ng-invalid ng-invalid-required"><div class="navbar-line navbar-line-search"><div class="navbar-item"><div class="navbar-item-cell navbar-item-cell-fill-parent"><input data-id-elem="txtSearch" type="search" name="search" placeholder="Pesquisar" required="required" autocomplete="off" ng-focus="navbar.showAutoComplete()" ng-blur="navbar.hideAutoComplete()" ng-model="navbar.searchQuery" ng-model-options="{ debounce: { 'default': 500, 'blur': 1000 } }" ng-change="navbar.searchSuggestions()" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required"></div><div class="navbar-item-cell search-button"><button data-id-elem="btnSearch" type="submit" class="navbar-submit ic-navbar ic-search"></button></div></div></div><!----></form></div><Paste>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row no-gutter">
+			<div class="col-xs-12">
+					<a ng-click="back()" class="breadcrumb"><div class="breadcrumb-content"><span class="ic-chevron-left"></span><span class="ng-transclude">Voltar</span></div></a>
+			</div>
+		</div>
+
+		<div class="row no-gutter">
+			<div class="col-xs-12">
+				<div data-id="wizard-stage" id="moveis-wizard">
+						
+					<div class="wizard-session">
+						<ul>
+							<li id="wizard-nav-room" class="active"><span>1</span> Cômodos</li>
+							<li id="wizard-nav-details"><span>2</span> Detalhes</li>
+							<li id="wizard-nav-address"><span>3</span> Endereço</li>
+							<li id="wizard-nav-contact"><span>4</span> Contato</li>
+						</ul>
+					</div>
+
+					<section class="wizard-local">
+						<div class="wizard-local__text">
+							<h2 id="wizard-local-title">Onde você colocará seu novo movel planejado?</h2>
+							<p>Para proseguir escolha até 2 opções</p>
+						</div>
+						<ul class="wizard-local__list">
+							<li data-id="Casa completa" id="wizard--local-casa-completa">
+								<figure>
+									<img src="./images/cozinha.png" alt="">
+								</figure>
+								<p>Casa Completa</p>
+							</li>
+							<li data-id="Cozinha" id-"wizard-local-cozinha">
+								<figure>
+									<img src="./images/cozinha.png" alt="">
+								</figure>
+								<p>Cozinha</p>
+							</li>
+							<li data-id="Dormitório" id="wizard-local-dormitorio">
+								<figure>
+									<img src="./images/cozinha.png" alt="">
+								</figure>
+								<p>Dormitório</p>
+							</li>
+							<li data-id="Sala" id="wizard-local-sala">
+								<figure>
+									<img src="./images/cozinha.png" alt="">
+								</figure>
+								<p>Sala</p>
+							</li>
+							<li data-id="Banheiro" id="wizard-local-banheiro">
+								<figure>
+									<img src="./images/cozinha.png" alt="">
+								</figure>
+								<p>Banheiro</p>
+							</li>
+							<li data-id="Área De Serviço" id="wizard-local-area-de-servico">
+								<figure>
+									<img src="./images/cozinha.png" alt="">
+								</figure>
+								<p>Área de serviço</p>
+							</li>
+						</ul>
+						<div class="wizard-local__buttons">
+							<button data-id="next-local" id="wizard-next-local">Próximo</button>
+						</div>
+					</section>
+
+
+					<section class="wizard-details">
+						<div class="wizard-details__text">
+							<h2 id="wizard-details-title">Para melhor atendê-lo, nos forneça alguns detalhes do projeto dos sonhos</h2>
+						</div>
+						<div class="wizard-details-left">
+							<div class="wizard-details__name">
+								<label for="nameProject" id="wizard-details-label-name">Nome do projeto:</label>
+								<input type="text" name="nameProject" data-id="nameProject" id="wizard-datails-input-name" autofocus>
+								<p><span data-id="countdowProject">00</span>/24 caracteres</p> 
+							</div>
+							<div class="wizard-details__measures">
+								<p>Medidas dos cômodos <span>(em metros)</span></p>
+								<div class="wizard-details__rooms1">
+									<p data-is="romm1" id="wizard-details-room1">[Cômodo 1]</p>
+								<div class="wizard-details-input__height">
+									<input type="number" name="roomHeight" data-id="room1Height" id="wizard-details-room1-height">
+									<label for="rommHeight" id="wizard-details-room1-label-height">Altura</label>
+								</div>
+								<div class="wizard-details-input__width">
+									<input type="number" name="roomWidth" data-id="room1Width" id="wizard-details-room1-width">
+									<label for="rommWidth" id="wizard-details-room1-label-width">Largura</label>
+								</div>
+							</div>
+							<div class="wizard-details__rooms2">
+								<p data-is="romm2" data-id="wizard-details-room2">[Cômodo 2]</p>
+								<div class="wizard-details-input__height">
+									<input type="number" name="roomHeight" data-id="room2Height" id="wizard-details-roomw-height">
+									<label for="rommHeight" id="wizard-details-room1-label-height">Altura</label>
+								</div>
+								<div class="wizard-details-input__width">
+									<input type="number" name="roomWidth" data-id="room2Width" id="wizard-details-room2-width">
+									<label for="rommWidth" id="wizard-details-room2-label-width">Largura</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wizard-details-rigth">
+						<h2>Descrição do projeto</h2>
+						<label for="description" id="wizard-details-title-description">Se quiser, forneça uma breve<br>descrição do seu projeto</label>
+						<textarea name="description" data-id="description" id="wizard-details-textatea-description" autofocus></textarea>
+						<p><span data-id="countdownDescription">000</span>/450 caracteres</p>
+						<div class="wizard-details-right__buttons">
+							<button id="wizard-description-cancel">Cancelar</button>
+							<button id="wizard-description-save">Salvar</button>
+						</div>
+					</div>
+					<div class="wizard-details-buttton-description-upload">
+						<button id="wizard-open-description">
+							<i>
+								<img src="./images/ico-add.png" alt="Icone Add" class="add">
+								<img src="./images/ico-ok.png" alt="Icone Ok" class="ok">
+							</i>
+							<p>Incluir<br>descrição</p>
+						</button>
+						<button id="wizard-open-upload">
+							<i>
+								<img src="./images/ico-add.png" alt="Icone Add" class="add">
+								<img src="./images/ico-ok.png" alt="Icone Ok" class="ok">
+							</i>
+							<p>Upload<br>de fotos</p>
+						</button>
+						<p class="wizard-text-upload">até 4 imagens</p>
+					</div>
+					<div class="wizard-details-upload">
+						<ul>
+							<li data-id="fileImage1" id="wizard-details-file1">
+								<div class="close" data-id="close1">X</div>
+								<div data-id="file1">
+									<img src="" id="image1">
+								</div>
+							</li>
+							<li data-id="fileImage2" id="wizard-details-file2">
+								<div class="close" data-id="close2">X</div>
+								<div data-id="file2">
+									<img src="" id="image2">
+								</div>
+							</li>
+							<li data-id="fileImage3" id="wizard-details-file3">
+								<div class="close" data-id="close3">X</div>
+								<div data-id="file3">
+										<img src="" id="image3">
+								</div>
+							</li>
+							<li data-id="fileImage4" id="wizard-details-file4">
+								<div class="close" data-id="close4">X</div>
+									<div data-id="file4">
+										<img src="" id="image4">
+									</div>
+							</li>
+						</ul>
+					</div>
+					<div class="wizard-details__buttons">
+						<button data-id="next-details" id="wizard-details-next">Próximo</button>
+					</div>
+					<input type="file" id="fileImage1">
+					<input type="file" id="fileImage2">
+					<input type="file" id="fileImage3">
+					<input type="file" id="fileImage4">
+				</section>
+
+				<section class="wizard-address">
+								<div class="wizard-address__text">
+									<h2 id="wizard-address-title">Por favor, complete seu endereço de montagem</h2>
+								</div>
+								<div class="wizard-address__forms">
+									<div class="wizard-address__numero">
+										<label for="numero" id="wizard-addres-label-numero">Número</label>
+										<input type="text" name="numero" data-id="numero" id="wizard-addres-input-numero" autofocus>
+									</div>
+									<div class="wizard-address__complemento">
+										<label for="complemento" id="wizard-addres-label-completmento">Complemento</label>
+										<input type="text" name="complemento" data-id="complemento" id="wizard-addres-input-complemento">
+									</div>
+									<div class="wizard-address__cep">
+										<label for="cep" id="wizard-addres-label-cep">CEP</label>
+										<input type="text" name="cep" data-id="cep" id="wizard-addres-input-cep" disabled value="03191140">
+									</div>
+									<div class="wizard-address__rua">
+										<label for="rua" id="wizard-addres-label-rua">Rua</label>
+										<input type="text" name="rua" data-id="rua" id="wizard-addres-input-rua" disabled>
+									</div>
+									
+									<div class="wizard-address__bairro">
+										<label for="bairro" id="wizard-addres-label-bairro">Bairro</label>
+										<input type="text" name="bairro" data-id="bairro" id="wizard-addres-input-bairro" disabled>
+									</div>
+									<div class="wizard-address__cidade">
+										<label for="cidade" id="wizard-addres-label-cidade">Cidade</label>
+										<input type="text" name="cidade" data-id="cidade" id="wizard-addres-input-cidade" disabled>
+									</div>
+									<div class="wizard-address__estado">
+										<label for="estado" id="wizard-addres-label-estado">UF</label>
+										<input type="text" name="estado" data-id="estado" id="wizard-addres-input-estado" disabled>
+									</div>
+								</div>
+								<div class="wizard-address-strore">
+									<div class="wizard-address-store__text">
+										<h4 id="wizard-addres-title-store">Qual a loja mais próxima?</h4>
+										<p>É necessário comparecer a loja. Se esta não for a loja mais próxima, você pode escolher outra. </p>
+									</div>
+									<div class="wizard-address-store-item">
+										<div class="wizard-address-store__local">
+											<p class="store" id="wizard-addres-p-store">Casas Bahia - Praça Ramos</p>
+											<p class="address" id="wizard-addres-p">Praça Ramos de Azevedo, 131 São Paulo República, SP 01037-010</p>
+										</div>
+										<div class="wizard-address-store__buttons">
+											<button id="wizard-addres-store-button">Escolher outra loja</button>
+										</div>
+									</div>
+								</div>
+								<div class="wizard-address__buttons">
+									<button data-id="next-address" id="wizard-addres-next">Próximo</button>
+								</div>
+
+								
+								
+							</section>
+
+
+						<section class="wizard-contact">
+								<div class="wizard-contact__text">
+									<h2 id="wizard-contact-title">Estamos quase terminando...<br>Como podemos entrar em contato com você?</h2>
+								</div>
+								<div class="wizard-contact__forms">
+									<div class="wizard-contact__name">
+										<label for="fullName" id="wizard-contact-label-name">Nome Completo</label>
+										<input type="text" name="fullName" data-id="fullName" id="wizard-contact-input-name">
+									</div>
+									<div class="wizard-contact__phone">
+										<label for="phone" id="wizard-contact-label-phone">Telefone</label>
+										<input type="text" name="phone" data-id="phone" id="wizard-contact-input-phone">
+									</div>
+									<div class="wizard-contact__email">
+										<label for="email" id="wizard-contact-email">E-mail</label>
+										<input type="text" name="email" data-id="email" id="wizard-contact-input-email">
+									</div>
+									<div class="wizard-contact__contact">
+										<p>Qual a melhor forma para entrarmos em contato?</p>
+										<div class="wizard-contact__callme">
+											<input id="callme" name="contactCheck" type="radio" value="Me ligue" id="wizard-contact-input-callme">
+											<label for="callme" id="wizard-contact-label-callme">Me ligue</label>
+										</div>
+										<div class="wizard-contact__callme">
+											<input id="sendemail" name="contactCheck" type="radio" value="Me mande um e-mail" id="wizard-contact-input-sendemail">
+											<label for="sendemail" id="wizard-contact-label-sendemail">Me mande um e-mail</label>
+										</div>
+									</div>
+									<div class="wizard-contact__buttons">
+										<p>Uma vez que você gerar o pedido você não poderá editá-lo</p>
+										<button data-id="next-contact" id="wizard-contact-next">Finalizar o pedido</button>
+									</div>
+								</div>
+							</section>
+					
+						</div>
+
+				<div data-id="wizard-success" id="moveis-wizard-success">
+					
+					<div class="wizard-success__right">
+						<div class="wizard-success__contact">
+							<p>Entraremos em contato com você em até 2 dias úteis através do:</p>
+							<p class="contact-different" data-id="success-email" id="wizard-success-email"></p>
+							<p class="contact-different" data-id="success-phone" id="wizard-success-phone"></p>
+						</div>
+					</div>
+					
+					<div class="wizard-success__left">
+						<div class="wizard-success__order">
+							<p>Resumo <span>do pedido</span></p>
+						</div>
+						<div class="wizard-success__project">
+							<p><span data-id="nomeProject" id="wizard-success-nameProject"></span> nº <span id="wizard-success-numberProject">[000000]</span></p>
+							<p class="wizard-success__project-abstract">Este resumo será enviado para nossa equipe e para seu e-mail!</p>
+						</div>
+						<div class="wizard-success__info">
+							<div class="wizard-success__room">
+								<p>Cômodo</p>
+								<p data-id="success-room" id="wizard-success-room"></p>
+							</div>
+							<div class="wizard-success__details-photo">
+								<div class="wizard-success__details">
+									<p>Detalhes Medidas</p>
+									<p data-id="success-measures" id="wizard-success-meassures"></p>
+									<p>Descrição:</p>
+									<p data-id="success-description" id="wizard-success-descriotion"></p>
+								</div>
+								<div class="wizard-success__photos">
+									<p>Images</p>
+									<figure data-id="success-photo-1" id="wizard-success-photo1"></figure>
+									<figure data-id="success-photo-2" id="wizard-success-photo2"></figure>
+									<figure data-id="success-photo-3" id="wizard-success-photo3"></figure>
+									<figure data-id="success-photo-4" id="wizard-success-photo4"></figure>
+								</div>
+							</div>
+							
+							<div class="wizard-success__store">
+								<div class="wizard-success__store-text">
+									<p>Loja mais próxima</p>
+									<p class="store" data-id="success-store" id="wizard-success-store"></p>
+									<p data-id="success-address" id="wizard-success-store-address"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- MODAL ESCOLHER LOJA -->
+		<div id="wizard-modal">
+			<div class="wizard-modal__header">
+				<button class="wizard-modal__header-close">voltar</button>
+			</div>
+			<div class="wizard-modal-left">
+				<div class="wizard-modal__actualy">
+					<button>Usar minha localização atual</button>
+				</div>
+				<div class="wizard-modal__input">
+					<input type="text" value="03191140">
+					<button></button>
+				</div>
+				<div class="wizard-modal__list">
+					<p><strong>10 locais</strong> encontrados</p>
+					<ul>
+						<li>
+							<figure><img src="https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png" alt=""></figure>
+							<div class="wizard-modal__list-text">
+								<p class="list-title">Casas Bahia - Tatuapé</p>
+								<p class="list-address"><span>Endereço</span> Praça Silvio Romero, 131 São  Paulo - República, SP </p>
+								<p class="list-address"><span>Horário de Funcionamento</span> Segunda a Sexta das 10:00 às 22:00, aos Sábados das 10:00 às 22:00 e aos Domingos das 14:00 às 20:00.</p>
+							</div>
+							<div class="wizard-modal__list-button">
+								<button data-title="Casas Bahia - Tatuapé" data-address="Praça Silvio Romero, 131 São  Paulo - República, SP">Escolher Loja</button>
+							</div>
+						</li>
+						<li>
+							<figure><img src="https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png" alt=""></figure>
+							<div class="wizard-modal__list-text">
+								<p class="list-title">Casas Bahia - Praça Ramos</p>
+								<p class="list-address"><span>Endereço</span> Praça Ramos de Azevedo, 131 São  Paulo - República, SP </p>
+								<p class="list-address"><span>Horário de Funcionamento</span> Segunda a Sexta das 10:00 às 22:00, aos Sábados das 10:00 às 22:00 e aos Domingos das 14:00 às 20:00.</p>
+							</div>
+							<div class="wizard-modal__list-button">
+								<button data-title="Casas Bahia - Mooca" data-address="Rua da mooca, 140 - mooca São Paulo, SP">Escolher Loja</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	<!-- MODAL ESCOLHER LOJA -->
+
+	<div class="footer footer-padded only-msite">
+		<div class="container">
+		
+				<div class="row row-mtxl">
+      <div class="col-xs-12">
+        <ul class="lst lst-bordered">
+          <li class="lst-item"><a ui-sref="cart.detail" class="lst-item-action" href="#/carrinho/detalhes">
+              <div class="lst-item-cell lst-item-cell-align-top">
+                <div class="ic-medium-container ic-cart"></div>
+              </div>
+              <div class="lst-item-cell lst-item-cell-expanded">
+                <h3 class="footer--h3">Meu caminhão</h3>
+              </div>
+              <div class="lst-item-cell ic-small-container ic-chevron-right"></div></a></li>
+          <li class="lst-item"><a ui-sref="account.menu" class="lst-item-action" href="#/conta/menu">
+              <div class="lst-item-cell lst-item-cell-align-top">
+                <div class="ic-medium-container ic-accmenu"></div>
+              </div>
+              <div class="lst-item-cell lst-item-cell-expanded">
+                <h3 class="footer--h3">Minha conta</h3>
+              </div>
+              <div class="lst-item-cell ic-small-container ic-chevron-right"></div></a></li>
+          <li class="lst-item"><a ui-sref="my-order.list" class="lst-item-action" href="#/meus-pedidos/lista">
+              <div class="lst-item-cell lst-item-cell-align-top">
+                <div class="ic-medium-container ic-checked-box"></div>
+              </div>
+              <div class="lst-item-cell lst-item-cell-expanded">
+                <h3 class="footer--h3">Meus pedidos</h3>
+              </div>
+              <div class="lst-item-cell ic-small-container ic-chevron-right"></div></a></li>
+        </ul>
+      </div>
+		</div>
+
+
+
+
+		<div class="row no-gutter footer-container row-mtxl">
+      <div class="col-xs-12">
+        <h5>Televendas</h5>
+      </div>
+      <div class="col-xs-12">
+        <label class="footer-text">Capitais e regiões metropolitanas</label>
+        <div class="btn-container"><a href="tel:4003-2773" class="btn primary expanded"><span class="button-ic-container ic-tel-menu"></span><span class="footer-text">Ligar para 4003-2773</span></a></div>
+      </div>
+      <div class="col-xs-12">
+        <p class="caption footer-text">* Demais localidades ligue: (0xx11) 4003-2773</p>
+      </div>
+      <div class="col-xs-12">
+        <h5>Dúvidas</h5>
+      </div>
+      <div class="col-xs-12">
+        <ul class="lst lst-footer">
+          <li class="lst-footer-item"><a ui-sref="customer-service" class="lst-item-action footer--lst-item-action" href="#/atendimento">
+              <div class="lst-item-cell">
+                <div class="ic-smaller-container ic-chevron-right"></div>
+              </div>
+              <div class="lst-item-cell lst-item-cell-expanded">Atendimento</div></a></li>
+          <li class="lst-footer-item"><a ui-sref="customer-service.privacy" class="lst-item-action footer--lst-item-action" href="#/atendimento/politica-privacidade">
+              <div class="lst-item-cell">
+                <div class="ic-smaller-container ic-chevron-right"></div>
+              </div>
+              <div class="lst-item-cell lst-item-cell-expanded">Política de privacidade</div></a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12">
+        <h5>Outras informações</h5>
+      </div>
+      <div class="col-xs-12">
+        <ul class="lst lst-footer">
+          <li class="lst-footer-item"><a ui-sref="customer-service.about" class="lst-item-action footer--lst-item-action" href="#/atendimento/sobre">
+              <div class="lst-item-cell">
+                <div class="ic-smaller-container ic-chevron-right"></div>
+              </div>
+              <div class="lst-item-cell lst-item-cell-expanded">Sobre as Casas Bahia</div></a></li>
+          <li class="lst-footer-item"><a ui-sref="customer-service.secure-site" class="lst-item-action footer--lst-item-action" href="#/atendimento/site-seguro">
+              <div class="lst-item-cell">
+                <div class="ic-smaller-container ic-chevron-right"></div>
+              </div>
+              <div class="lst-item-cell lst-item-cell-expanded">Compra segura</div></a></li>
+          <li class="lst-footer-item"><a ui-sref="stores.list" class="lst-item-action footer--lst-item-action" href="#/lojas/lista">
+              <div class="lst-item-cell">
+                <div class="ic-smaller-container ic-chevron-right"></div>
+              </div>
+              <div class="lst-item-cell lst-item-cell-expanded">Lojas físicas</div></a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12">
+        <h5>Redes sociais</h5>
+      </div>
+      <div class="col-xs-12">
+        <p class="footer-text">Acompanhe todas as ofertas do site da Casas Bahia através das redes sociais.</p><br><a ng-href="https://www.facebook.com/casasbahia" target="_blank" class="ic-facebook footer-icon" href="https://www.facebook.com/casasbahia"></a><a ng-href="https://twitter.com/casasbahiacombr" target="_blank" class="ic-twitter footer-icon" href="https://twitter.com/casasbahiacombr"></a><a ng-href="https://plus.google.com/+casasbahiacombr" target="_blank" class="ic-google footer-icon" href="https://plus.google.com/+casasbahiacombr"></a><a ng-href="http://www.youtube.com/casasbahiacombr" target="_blank" class="ic-youtube footer-icon" href="http://www.youtube.com/casasbahiacombr"></a><a ng-href="http://pinterest.com/casasbahiacombr" target="_blank" class="ic-pinterest footer-icon" href="http://pinterest.com/casasbahiacombr"></a>
+      </div>
+    </div>
+		
+		<div class="row">
+      <div class="col-xs-12 text-center">
+        <p class="footer-disclaimer caption">CNOVA Comércio Eletrônico S.A. / www.casasbahia.com.br / Rua João Pessoa, n° 83, Piso Mezanino, Sala 02, Centro, São Caetano do Sul -SP, CEP 09520-010 / CNPJ: 07.170.938/0001-07 / Inscrição Estadual: 143.631.918.112 / Telefone: (11) 4003-4336<a href="mailto:falecom@sac.casasbahia.com.br">falecom@sac.casasbahia.com.br</a></p>
+      </div>
+    </div>
+		
+		</div>
+	</div>
+</body>
+</html>
