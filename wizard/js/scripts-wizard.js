@@ -36,9 +36,16 @@
 		contact();
 	}
 	function scrollHeader() {
-		$('body,html').animate({
-    	scrollTop: $('.wizard-header').position().top
-    }, 500);
+		var width = window.innerWidth;
+		if (width >= 950) {
+			$('body,html').animate({
+    		scrollTop: $('.wizard-header').position().top
+    	}, 500);
+		} else {
+			$('body,html').animate({
+    		scrollTop: $('body').position().top
+    	}, 500);
+		}
 	}
 	function filePreview(image, files, li) {
 		var reader  = new FileReader();
@@ -59,28 +66,35 @@
 		}
 	}
 
-	function checkLocal() {
-		$('.wizard-local__list li').on('click', function() {
-			if ($(this).hasClass('active')){
-				$(this).removeClass('active');
-				itemsCheck--;
-				if ($('.wizard-local__list .active').length) {
-					$('[data-id="next-local"]').removeAttr("disabled");
-				} else {
-					$('[data-id="next-local"]').attr('disabled', 'true');
-				}
-				return
-			}
-			if (itemsCheck >= 2) {
-				return alert('Selecionar no máximo 2 ambientes');
-			}
-			itemsCheck++;
-			$(this).addClass('active');
+	function desabledLocal() {
+		var width = window.innerWidth;
+		if (width >= 950) {
 			if ($('.wizard-local__list .active').length) {
 				$('[data-id="next-local"]').removeAttr("disabled");
 			} else {
 				$('[data-id="next-local"]').attr('disabled', 'true');
 			}
+		}
+	}
+
+	function checkLocal() {
+		var width = window.innerWidth;
+		if (width <= 949) {
+			$('[data-id="next-local"]').removeAttr("disabled");
+		}
+		$('.wizard-local__list li').on('click', function() {
+			if ($(this).hasClass('active')){
+				$(this).removeClass('active');
+				itemsCheck--;
+				desabledLocal()
+				return
+			}
+			if (itemsCheck >= 2) {
+				return;
+			}
+			itemsCheck++;
+			$(this).addClass('active');
+			desabledLocal()
 		})
 		$('[data-id="next-local"]').on('click', function() {
 			arrayLocal = [];
@@ -103,6 +117,31 @@
 		var button = $('[data-id="next-details"]');
 		var inputProject = $('[data-id="nameProject"]');
 		var inputDescription = $('[data-id="description"]');
+		var widthDetails = window.innerWidth;
+
+		if (widthDetails <= 949) {
+			$('#wizard-open-description').on('click', function() {
+				scrollHeaderMobile();
+				$('.wizard-details-rigth').show();
+				$('body').addClass('wizard-no-scroll');
+			});
+			$('#wizard-description-cancel').on('click', function() {
+				$('.wizard-details-rigth').hide();
+				$('body').removeClass('wizard-no-scroll');
+			});
+			$('#wizard-description-save').on('click', function() {
+				var valueDescription = $('#wizard-details-textatea-description').val();
+				if(valueDescription !== '') {
+					$('.wizard-details-rigth').hide();
+					$('body').removeClass('wizard-no-scroll');
+					$('#wizard-open-description').addClass('finish');
+					return
+				}
+				$('.wizard-details-rigth').hide();
+				$('body').removeClass('wizard-no-scroll');
+				$('#wizard-open-description').removeClass('finish');
+			});
+		}
 
 		$('[data-id="comodo"]').on('click', function() {
 			$('.wizard-details').hide();
@@ -131,12 +170,14 @@
 				$(this).addClass('error');
 				$(this).next('p').addClass('error')
 				button.attr('disabled', true);
+				$('#wizard-description-save').attr('disabled', true);
 			} else {
 				if (inputProject.val().length <= 24) {
 					button.attr('disabled', false);
 				}
 				$(this).removeClass('error');
 				$(this).next('p').removeClass('error');
+				$('#wizard-description-save').attr('disabled', false);
 			}
 			countdownDescription.html($(this).val().length);
 		});
@@ -240,6 +281,7 @@
 		$('.wizard-modal-item').show();
 	}
 	function address() {
+		var width = window.innerWidth;
 		var inputCep = $('[data-id="cep"]');
 		inputCep.mask('99999-999');
 		if (inputCep.val() !== '') {
@@ -253,28 +295,51 @@
 					});
 			}
 		}
-		$('.wizard-modal__list li').on('click', function() {
-			var title = $(this).find('p').html();
-			selectStore(title);
-		});
-		$('.wizard-modal-item__header i').on('click', function() {
-			$('.wizard-modal__input').show();
-			$('.wizard-modal__list').show();
-			$('.wizard-modal-item').hide();
-		});
-		$('.wizard-address-store__buttons button').on('click', function(){
-			$('.wizard-modal').fadeIn();
-		});
-		$('.wizard-modal__header-close').on('click', function(){
-			$('.wizard-modal').fadeOut();
-		})
-		$('.wizard-modal-item__footer button').on('click', function() {
-			var title = $(this).attr('data-title');
-			var address = $('.wizard-modal-item__content .address').html();
-			$('.wizard-address-store__local .store').html(title);
-			$('.wizard-address-store__local .address').html(address);
-			$('.wizard-modal').fadeOut();
-		});
+		if (width >= 950) {
+			$('.wizard-modal__list li').on('click', function() {
+				var title = $(this).find('p').html();
+				selectStore(title);
+			});
+			$('.wizard-modal-item__header i').on('click', function() {
+				$('.wizard-modal__input').show();
+				$('.wizard-modal__list').show();
+				$('.wizard-modal-item').hide();
+			});
+			$('.wizard-address-store__buttons button').on('click', function(){
+				$('.wizard-modal').fadeIn();
+			});
+			$('.wizard-modal__header-close').on('click', function(){
+				$('.wizard-modal').fadeOut();
+			})
+			$('.wizard-modal-item__footer button').on('click', function() {
+				var title = $(this).attr('data-title');
+				var address = $('.wizard-modal-item__content .address').html();
+				$('.wizard-address-store__local .store').html(title);
+				$('.wizard-address-store__local .address').html(address);
+				$('.wizard-modal').fadeOut();
+			});
+		} else {
+			$('.wizard-address-store__buttons #wizard-addres-store-button').on('click', function(){
+				scrollHeaderMobile();
+				$('body').addClass('wizard-no-scroll');
+				$('#wizard-modalMobile').fadeIn();
+			});
+			$('#wizard-modalMobile .wizard-modalMobile__header-close').on('click', function(){
+				$('#wizard-modalMobile').fadeOut();
+				$('body').removeClass('wizard-no-scroll');
+			})
+			$('#wizard-modalMobile .wizard-modalMobile__list li button').on('click', function() {
+				$('body').removeClass('wizard-no-scroll');
+				var title = $(this).attr('data-title');
+				var address = $(this).attr('data-address');
+				$('.wizard-address-store__local .store').html(title);
+				$('.wizard-address-store__local .address').html(address);
+				$('#wizard-modalMobile').fadeOut();
+			});
+
+		}
+		
+		
 		$('[data-id="next-address"]').on('click', function() {
 			arrayAddress = []
 			arrayAddress.push({
@@ -410,6 +475,10 @@
 		$('[data-id="success-address"]').html(arrayAddress[0].address);
 		$('[data-id="success-email"]').html(arrayContact[0].email !== '' ? '<span>E-mail:</span> ' + arrayContact[0].email : '');
 		$('[data-id="success-phone"]').html(arrayContact[0].phone !== '' ? '<span>Telefone:</span> ' + arrayContact[0].phone : '');
+		console.log(arrayLocal);
+		console.log(arrayDetails);
+		console.log(arrayAddress);
+		console.log(arrayContact);
 	}
 
 	$(document).ready(function(){
