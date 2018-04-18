@@ -1574,7 +1574,8 @@ body.moveis-wizard{
 	}
 	.moveis-wizard .wizard-local,
 	.moveis-wizard .wizard-details,
-	.moveis-wizard .wizard-address {
+	.moveis-wizard .wizard-address,
+	.moveis-wizard .wizard-contact {
     width: 73%;
 	}
 	.moveis-wizard .wizard-local__list li {
@@ -1628,6 +1629,22 @@ body.moveis-wizard{
     margin-right: 0;
     width: 11%;
 	}
+	.moveis-wizard .wizard-contact__name {
+    width: 60%;
+    margin-bottom: 2%;
+    margin-right: 2%;
+	}
+	.moveis-wizard .wizard-contact__phone {
+    width: 38%;
+    margin-bottom: 2%;
+	}
+	.moveis-wizard .wizard-contact__email {
+    width: 100%;
+    float: left;
+	}
+	.moveis-wizard .wizard-contact__contact {
+    margin-top: 4%;
+	}
 }
 @media screen and (max-width: 1031px) {
 	.moveis-wizard .wizard-address-store__icon {
@@ -1658,7 +1675,8 @@ body.moveis-wizard{
 	}
 	.moveis-wizard .wizard-local,
 	.moveis-wizard .wizard-details,
-	.moveis-wizard .wizard-address {
+	.moveis-wizard .wizard-address,
+	.moveis-wizard .wizard-contact {
 		width: 100%;
 	}
 	.moveis-wizard .wizard-session-mobile {
@@ -1710,7 +1728,10 @@ body.moveis-wizard{
 	.moveis-wizard .wizard-details-upload,
 	.moveis-wizard .wizard-address__text,
 	.moveis-wizard .wizard-address__forms,
-	.moveis-wizard .wizard-address-strore {
+	.moveis-wizard .wizard-address-strore,
+	.moveis-wizard .wizard-contact__text,
+	.moveis-wizard .wizard-contact__email,
+	.moveis-wizard .wizard-contact__contact {
 		padding: 0 2%;
 	}
 	.moveis-wizard .wizard-local__buttons p,
@@ -2235,7 +2256,78 @@ body.moveis-wizard{
     color: #ffffff;
     text-transform: uppercase;
 	}
-
+	.moveis-wizard .wizard-contact__name,
+	.moveis-wizard .wizard-contact__phone {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 2%;
+		padding: 0 2%;
+	}
+	.moveis-wizard .wizard-contact__contact {
+		margin-top: 2%;
+	}
+	.moveis-wizard .wizard-contact__callme label:before {
+		width: 28px;
+    height: 28px;
+	}
+	.moveis-wizard .wizard-contact__callme label:after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 12px);
+    left: 6px;
+    border: 2px solid #2a7bbf;
+    border-right: 0px;
+    border-top: 0;
+    width: 16px;
+    height: 7px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    opacity: 0;
+	}
+	.moveis-wizard .wizard-contact__callme label {
+		font-size: 16px;
+	}
+	.moveis-wizard .wizard-contact__callme {
+		margin-right: 20px;
+	}
+	.moveis-wizard .wizard-contact__buttons p {
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.18;
+    letter-spacing: normal;
+    text-align: center;
+    color: #aeaeae;
+	}
+	.moveis-wizard .wizard-contact__buttons button {
+    width: 300px;
+    height: 43px;
+    margin-top: 10px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    border: 0px;
+    background-color: #73b529;
+    color: #FFF;
+    font-weight: 700;
+    font-family: 'Futura-Bold';
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-style: normal;
+    font-stretch: normal;
+	}
+	.moveis-wizard .wizard-contact__buttons {
+    flex-direction: column;
+	}
 
 }
 @media screen and (max-width: 760px) {
@@ -2257,19 +2349,24 @@ body.moveis-wizard{
 	.moveis-wizard .wizard-details-rigth label:before {
 		font-size: 20px;
 	}
-	.moveis-wizard .wizard-details h2 {
+	.moveis-wizard .wizard-details h2,
+	.moveis-wizard .wizard-contact h2 {
 		font-size: 20px;
 	}
 	.moveis-wizard .wizard-details__name label,
 	.moveis-wizard .wizard-details__measures p,
-	.moveis-wizard .wizard-address label {
+	.moveis-wizard .wizard-address label,
+	.moveis-wizard .wizard-contact label,
+	.moveis-wizard .wizard-contact__contact p,
+	.moveis-wizard .wizard-contact__callme label {
 		font-size: 14px;
 	}
 	.moveis-wizard .wizard-details__name input,
 	.moveis-wizard .wizard-details-input__height input,
 	.moveis-wizard .wizard-details-input__width input ,
 	.moveis-wizard .wizard-details-buttton-description-upload button,
-	.moveis-wizard .wizard-address input {
+	.moveis-wizard .wizard-address input,
+	.moveis-wizard .wizard-contact input {
 		height: 42px;
 	}
 	.moveis-wizard .wizard-details__name p {
@@ -2281,6 +2378,12 @@ body.moveis-wizard{
 
 }
 @media screen and (max-width: 600px) {
+	.moveis-wizard .wizard-contact__name, .moveis-wizard .wizard-contact__phone {
+    margin-bottom: 6%;
+	}
+	.moveis-wizard .wizard-contact__contact {
+		margin-top: 6%;
+	}
 	#wizard-modalMobile .wizard-modalMobile__list {
 		height: 100vw;
 	}
@@ -2294,7 +2397,8 @@ body.moveis-wizard{
     margin-bottom: 20px;
 	}
 	.moveis-wizard .wizard-details h2,
-	.moveis-wizard .wizard-address h2 {
+	.moveis-wizard .wizard-address h2,
+	.moveis-wizard .wizard-contact h2 {
 		font-size: 14px;
 	}
 	.moveis-wizard .wizard-session-mobile ul li {
