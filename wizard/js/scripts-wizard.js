@@ -136,7 +136,7 @@
 
 		if (widthDetails <= 949) {
 			$('#wizard-open-description').on('click', function() {
-				scrollHeaderMobile();
+				scrollHeader();
 				$('.wizard-details-rigth').show();
 				$('body').addClass('wizard-no-scroll');
 			});
@@ -460,6 +460,7 @@
 			});
 			$('[data-id="wizard-stage"]').hide();
 			$('.wizard-banner').show();
+			$('[data-id="wizard-success"]').addClass('wizard-success');
 			$('[data-id="wizard-success"]').show();
 			success();
 		});

@@ -1341,7 +1341,7 @@ body.moveis-wizard{
 	align-items: center;
 }
 .moveis-wizard .wizard-success__left {
-	width: 360px;
+	width: 31.6%;
 	float: left;
 	margin-bottom: 60px;
 }
@@ -1438,6 +1438,7 @@ body.moveis-wizard{
 	font-weight: bold;
 }
 .moveis-wizard .wizard-success__photos {
+	width: 100%;
 	margin-top: 10px;
 	display: inline-block;
 }
@@ -1450,11 +1451,11 @@ body.moveis-wizard{
 	margin-bottom: 15px;
 }
 .moveis-wizard .wizard-success__photos figure {
-	width: 72px;
-  height: 72px;
+	width: 22.6%;
+  height: auto;
 	float: left;
-	margin: 0 10px 0 0;
-	padding: 0;
+	margin: 0 3% 0 0;
+	padding: 23% 0 0 0;
   border-radius: 4px;
   background-color: #dedede;
 	position: relative;
@@ -1479,16 +1480,16 @@ body.moveis-wizard{
 	display: inline-block;
 }
 .moveis-wizard .wizard-success__store figure {
-	width: 40px;
+	width: 12%;
 	height: 53px;
 	float: left;
-	margin: 7px 20px 0 0;
+	margin: 7px 7% 0 0;
 }
 .moveis-wizard .wizard-success__store figure img {
 	max-width: 100%;
 }
 .moveis-wizard .wizard-success__store-text {
-	width: 260px;
+	width: 81%;
 	float: left;
 }
 .moveis-wizard .wizard-success__store-text p {
@@ -1513,7 +1514,7 @@ body.moveis-wizard{
 	margin-bottom: 5px;
 }
 .moveis-wizard .wizard-success__right {
-	width: 730px;
+	width: 66%;
 	height: 435px;
 	float: left;
 	margin-left: 20px;
@@ -1661,23 +1662,113 @@ body.moveis-wizard{
 
 }
 @media screen and (max-width: 950px) {
+	.moveis-wizard .wizard-banner {
+		display: none !important;
+	}
+	.moveis-wizard .wizard-success {
+    display: flex !important;
+    flex-wrap: wrap;
+	}
+	.moveis-wizard .wizard-success__left {
+    width: 100%;
+    float: left;
+    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    order: 2;
+    background-color: #eee;
+	}
+	.moveis-wizard .wizard-success__right {
+    width: 100%;
+    height: auto;
+    float: none;
+    margin-left: 0;
+    margin-top: 20px;
+    background-image: none;
+    margin-bottom: 30px;
+    order: 1;
+    display: flex;
+    padding: 0 2%;
+	}
+	.moveis-wizard .wizard-success__contact {
+    width: 100%;
+    height: auto;
+    float: left;
+	}
+	.moveis-wizard .wizard-success__contact p {
+		text-align: center;
+	}
+	.moveis-wizard .wizard-success__contact p:first-child {
+    margin-bottom: 0;
+	}
+	.moveis-wizard .wizard-success__order {
+    width: 100%;
+    display: inline-block;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    padding: 0 2%;
+	}
+	.moveis-wizard .wizard-success__order p {
+		color: #2a7bbf;
+	}
+	.moveis-wizard .wizard-success__project {
+    margin-bottom: 20px;
+	}
+	.moveis-wizard .wizard-success__project {
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 0 2%;
+	}
+	.moveis-wizard .wizard-success__project p {
+    color: #2a7bbf;
+    display: inline;
+	}
+	.moveis-wizard .wizard-success__project p:first-child {
+    margin-right: 10px;
+	}
+	.moveis-wizard .wizard-success__project p.wizard-success__project-abstract {
+    margin-bottom: 0;
+    display: inline-block;
+    width: 100%;
+	}
+	.moveis-wizard .wizard-success__info {
+    padding: 0 2%;
+	}
 	body.wizard-no-scroll {
   	overflow: hidden;
 	}
 	.moveis-wizard .wizard-header,
 	.moveis-wizard .wizard-session,
 	.moveis-wizard .wizard-details-upload,
-	.moveis-wizard .wizard-address-store__icon {
+	.moveis-wizard .wizard-address-store__icon,
+	.moveis-wizard .wizard-success__photos,
+	.moveis-wizard .wizard-success__store figure {
 		display: none;
 	}
 	.moveis-wizard .center {
 		padding: 0;
 	}
+	.moveis-wizard .wizard-success__details,
+	.moveis-wizard .wizard-success__room {
+		padding: 15px;
+	}
+	.moveis-wizard .wizard-success__store {
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+	}
 	.moveis-wizard .wizard-local,
 	.moveis-wizard .wizard-details,
 	.moveis-wizard .wizard-address,
-	.moveis-wizard .wizard-contact {
+	.moveis-wizard .wizard-contact,
+	.moveis-wizard .wizard-success__store-text {
 		width: 100%;
+	}
+	.moveis-wizard .wizard-success__store-text p.store {
+    margin-bottom: 2px;
+    margin-top: 2px;
 	}
 	.moveis-wizard .wizard-session-mobile {
 		display: inline-block;
@@ -2377,6 +2468,14 @@ body.moveis-wizard{
 	}
 
 }
+@media screen and (max-width: 769px) {
+	.moveis-wizard .wizard-success__contact p,
+	.moveis-wizard .wizard-success__contact p.contact-different,
+	.moveis-wizard .wizard-success__order p,
+	.moveis-wizard .wizard-success__project p {
+		font-size: 20px;
+	}
+}
 @media screen and (max-width: 600px) {
 	.moveis-wizard .wizard-contact__name, .moveis-wizard .wizard-contact__phone {
     margin-bottom: 6%;
@@ -2455,6 +2554,36 @@ body.moveis-wizard{
     width: 49%;
     margin-right: 0;
     margin-bottom: 2%;
+	}
+	.moveis-wizard .wizard-success__contact p,
+	.moveis-wizard .wizard-success__contact p.contact-different,
+	.moveis-wizard .wizard-success__order p,
+	.moveis-wizard .wizard-success__project p {
+		font-size: 18px;
+	}
+	.moveis-wizard .wizard-success__project p:first-child {
+    margin-right: 2px;
+	}
+	.moveis-wizard .wizard-success__project p.wizard-success__project-abstract,
+	.moveis-wizard .wizard-success__room p,
+	.moveis-wizard .wizard-success__details p:first-child {
+		font-size: 14px;
+	}
+	.moveis-wizard .wizard-success__room p:last-child,
+	.moveis-wizard .wizard-success__details p,
+	.moveis-wizard .wizard-success__store-text p,
+	.moveis-wizard .wizard-success__store-text p.store {
+    font-size: 12px;
+	}
+	.moveis-wizard .wizard-success__details p:nth-child(3) {
+    margin-top: 15px;
+	}
+	.moveis-wizard .wizard-success__right {
+		padding: 0 3%;
+	}
+	.moveis-wizard .wizard-success__store-text p.store {
+    margin-bottom: 1px;
+    margin-top: 1px;
 	}
 }
 @media screen and (max-width: 506px) {
