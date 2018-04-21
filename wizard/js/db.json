@@ -1,6 +1,3 @@
-// 20180420154310
-// http://fcamara.loja/lojas/cep/03191140/tipoloja?tipoloja=100&tipoloja=300&tipoloja=545&format=json
-
 {
   "PontosMoveisPlanejados": [
     {
@@ -198,10 +195,5 @@
       "Regiao": "São Paulo Capital",
       "HorarioFuncionamento": "Segunda a Sábado das 09h00 às 21h00 e Domingo e Feriados das 09h00 às 19h00"
     }
-  ],
-  "Valido": true,
-  "Mensagens": [
-    
-  ],
-  "Protocolo": "8e7b5315-93e9-475f-b3ea-44b273f7e108"
+  ]
 }
