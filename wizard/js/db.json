@@ -1,5 +1,4 @@
-{
-  "PontosMoveisPlanejados": [
+[
     {
       "Id": 0,
       "IdEnderecoLojaFisica": 2283,
@@ -195,5 +194,4 @@
       "Regiao": "São Paulo Capital",
       "HorarioFuncionamento": "Segunda a Sábado das 09h00 às 21h00 e Domingo e Feriados das 09h00 às 19h00"
     }
-  ]
-}
+]
