@@ -1090,7 +1090,7 @@ body.moveis-wizard{
 .moveis-wizard .wizard-modal-item__content p {
 	font-family: Arial;
   font-size: 14px;
-  line-height: 1.14;
+  line-height: 1.4;
   color: #666666;
 	font-weight: 400;
 	margin-bottom: 5px;
@@ -2200,8 +2200,12 @@ body.moveis-wizard{
     width: 34px;
     height: 34px;
     display: flex;
-    background-color: #1381ce;
-    border-radius: 50%;
+		background-image: url('../images/icon-geolocation.png');
+		background-repeat: no-repeat;
+    background-size: contain;
+	}
+	#wizard-modalMobile .wizard-modalMobile__actualy.active button:after {
+		background-image: url('../images/loading.gif');
 	}
 	#wizard-modalMobile .wizard-modalMobile__input {
     margin-bottom: 20px;

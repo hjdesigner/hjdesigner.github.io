@@ -4,11 +4,10 @@
 	var arrayDetails = [];
 	var arrayAddress = [];
 	var arrayContact = [];
-	var beaches = [
-  	['Mooca', -23.5606307, -46.5854571],
-    ['Tatuape', -23.5467317, -46.5740591],
-    ['Metro Tatuape 3', -23.5421352, -46.5761956],
-  ];
+	var beaches = [];
+	var dados;
+	var latApi;
+	var lngApi;
 
 	function nextLocal() {
 		$('[data-id="comodo"]').removeClass('active');
@@ -35,7 +34,6 @@
 			$('.wizard-session-mobile #wizard-nav-address').addClass('active');
 		}
 		address();
-		initMap();
 	}
 	function nextAddress() {
 		$('[data-id="endereco"]').removeClass('active');
@@ -289,11 +287,96 @@
 		});
 	}
 	function selectStore(title){
-		$('.wizard-modal__input').hide();
-		$('.wizard-modal__list').hide();
-		$('.wizard-modal-item__header p').html(title);
-		$('.wizard-modal-item__footer button').attr('data-title', title);
-		$('.wizard-modal-item').show();
+		$.each(dados, function(i, v) {
+			if( title === v.Nome ) {
+				$('.wizard-modal__input').hide();
+				$('.wizard-modal__list').hide();
+				$('.wizard-modal-item__header p').html(v.Nome);
+				$('#wizard-modal-address').html(v.Rua + ', ' + v.Numero + ' - ' + v.Bairro + ' - ' + v.Municipio)
+				$('#wizard-modal-highlighter').html(v.HorarioFuncionamento)
+				$('.wizard-modal-item__footer button').attr('data-title', v.Nome);
+				$('.wizard-modal-item').show();
+			}
+		})
+		
+	}
+	function jsonStore(data) {
+			dados = data;
+			var htmlList;
+			var viewList = $('.wizard-modal__list ul');
+			var viewListMobile = $('.wizard-modalMobile__list ul');
+			var viewLengthMobile = $('#wizardLengthMobile');
+			var firstStory = data[0]
+			var viewStore = $('#wizard-addres-p-store');
+			var viewAddress = $('#wizard-addres-p');
+			var place = dados.length > 1 ? ' locais' : ' local';
+			var completeAddress = firstStory.Rua + ', ' + firstStory.Numero + ' - ' + firstStory.Bairro + ' - ' + firstStory.Municipio;
+			viewList.html('');
+			viewListMobile.html('');
+			viewStore.html(firstStory.Nome);
+			viewAddress.html(completeAddress)
+			viewLengthMobile.html(dados.length + place)
+			$.each(dados, function(i, v) {
+				beaches.push([v.Nome, v.Latitude, v.Longitude])
+				htmlList = '<li id="loja-'+v.Nome.replace(/-/g, '').replace(/ /g, '')+'">' +
+					'<figure><img src="https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png" alt=""></figure>' +
+					'<p>'+ v.Nome +'</p>' +
+					'<i></i>'
+				'</li>';
+				htmlListMobile = '<li id="lojaMobile-'+v.Nome.replace(/-/g, '').replace(/ /g, '')+'">' +
+					'<figure><img src="https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png" alt=""></figure>' +
+						'<div class="wizard-modalMobile__list-text">' +
+							'<p class="list-title">'+ v.Nome +'</p>' +
+							'<p class="list-address"><span>Endereço</span> '+ v.Rua +', '+ v.Numero +' - '+ v.Bairro +' - '+ v.Municipio +'</p>' +
+							'<p class="list-address"><span>Horário de Funcionamento</span> '+ v.HorarioFuncionamento +'</p>' +
+						'</div>' +
+						'<div class="wizard-modalMobile__list-button">' +
+							'<button data-title="'+ v.Nome +'" data-address="'+ v.Rua +', '+ v.Numero +' - '+ v.Bairro +' - '+ v.Municipio +'" id="btnMobile-tatuape">Escolher Loja</button>' +
+						'</div>' +
+					'</li>';
+				viewList.append(htmlList);
+				viewListMobile.append(htmlListMobile);
+			})
+			$.ajax({
+				url:	"https://maps.googleapis.com/maps/api/geocode/json?address=03191140&key=AIzaSyDR5XxjdXsmwwduvqYbBHwDz-06j3RbHbk&callback",
+				data: {
+					format: 'json'
+				},
+				error: function(error) {
+					console.log(error)
+   			},
+   			dataType: 'json',
+				success: function(data) {
+					$.each(data.results, function(i, v) {
+						latApi = v.geometry.location.lat;
+						lngApi = v.geometry.location.lng;
+					})
+					initMap();
+				},
+   			type: 'GET'
+			});
+		}
+	function getMap() {
+		$.ajax({
+			url:	"https://henriquemelanda.com.br/wizard/js/db.json?v1",
+			data: {
+				format: 'json'
+			},
+			error: function(error) {
+				console.log(error)
+   		},
+   		dataType: 'json',
+			success: function(data) {
+				jsonStore(data);	
+			},
+   		type: 'GET'
+		});
+		
+	}
+	function showPosition(position) {
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude); 
+    console.log(position); 
 	}
 	function address() {
 		var width = window.innerWidth;
@@ -308,10 +391,32 @@
 						$('[data-id="cidade"]').val(data.localidade);
 						$('[data-id="estado"]').val(data.uf);
 					});
+				getMap();
 			}
 		}
+
+		$('#buttonSearchModal').on('click', function() {
+			var input = $('#imputSearchModal').val();
+			if (input !== '') {
+				getMap();
+			}
+		})
+		$('#buttonSearchModalMobile').on('click', function() {
+			var input = $('#buttonSearchModalMobile').val();
+			if (input !== '') {
+				getMap();
+			}
+		})
+		$('#geolocation').on('click', function() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+    	} else {
+        console.log("Geolocation is not supported by this browser.");
+    	}
+		})
+
 		if (width >= 950) {
-			$('.wizard-modal__list li').on('click', function() {
+			$(document).on('click', '.wizard-modal__list li', function() {
 				var title = $(this).find('p').html();
 				selectStore(title);
 			});
@@ -335,7 +440,7 @@
 			});
 		} else {
 			$('.wizard-address-store__buttons #wizard-addres-store-button').on('click', function(){
-				scrollHeaderMobile();
+				scrollHeader();
 				$('body').addClass('wizard-no-scroll');
 				$('#wizard-modalMobile').fadeIn();
 			});
@@ -343,7 +448,7 @@
 				$('#wizard-modalMobile').fadeOut();
 				$('body').removeClass('wizard-no-scroll');
 			})
-			$('#wizard-modalMobile .wizard-modalMobile__list li button').on('click', function() {
+			$(document).on('click', '#wizard-modalMobile .wizard-modalMobile__list li button', function() {
 				$('body').removeClass('wizard-no-scroll');
 				var title = $(this).attr('data-title');
 				var address = $(this).attr('data-address');
@@ -392,7 +497,6 @@
     };
     for (var i = 0; i < beaches.length; i++) {
 			var beach = beaches[i];
-			
 			var marker = new google.maps.Marker({
       	position: {lat: beach[1], lng: beach[2]},
         map: map,
@@ -407,12 +511,21 @@
 	function initMap() {
 		var map = new google.maps.Map(document.getElementById('wizard-map'), {
     	zoom: 13,
-      center: {lat: -23.5657732, lng: -46.5713469}
+      center: {lat: latApi, lng: lngApi}
     });
-
     setMarkers(map);
 	}
-	
+
+	function validaEmail(email){
+    var str = email;
+    var filtro = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    if(filtro.test(str)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 	function contact() {
 		$('[data-id="phone"]').focusout(function(){
     	var phone, element;
@@ -431,6 +544,7 @@
 			var inputName = $('[data-id="fullName"]').val();
 			var inputPhone = $('[data-id="phone"]').val();
 			var inputEmail = $('[data-id="email"]').val();
+			var validEmail = validaEmail(inputEmail);
 			
 			if (inputName === '') {
 				alert('Por favor preencha seu nome');
@@ -445,6 +559,10 @@
 			if (checkSendemail.is(':checked')) {
 				if (inputEmail === '') {
 					alert('Por favor preencha seu email')
+					return;
+				}
+				if (validEmail === false) {
+					alert('Preencha com um e-mail válido.')
 					return;
 				}
 			}
@@ -473,28 +591,34 @@
 	}
 
 	function success() {
-		var room1 = arrayDetails[0].room1 !== undefined ? arrayDetails[0].room1 + ' m ' : '';
-		var room2 = arrayDetails[0].room2 !== undefined ? ' / ' + arrayDetails[0].room2 + ' m' : '';
-		for(var i = 0; i <= arrayLocal.length; i++) {
-			var room = i !== arrayLocal.length ? arrayLocal[i] + ', ' : arrayLocal[i];
-			$('[data-id="success-room"]').append(room);
+
+		if (arrayLocal.length > 0) {
+			for(var i = 0; i <= arrayLocal.length; i++) {
+				var room = i !== arrayLocal.length ? arrayLocal[i] + ', ' : arrayLocal[i];
+				$('[data-id="success-room"]').append(room);
+			}
 		}
-		$('[data-id="nomeProject"]').html(arrayDetails[0].name);
-		$('[data-id="success-measures"]').append(room1);
-		$('[data-id="success-measures"]').append(room2);
-		$('[data-id="success-description"]').html(arrayDetails[0].description);
-		$('[data-id="success-photo-1"]').html(arrayDetails[0].image1 !== '' ? '<img src="'+ arrayDetails[0].image1 +'" >' : '');
-		$('[data-id="success-photo-2"]').html(arrayDetails[0].image2 !== '' ? '<img src="'+ arrayDetails[0].image2 +'" >' : '');
-		$('[data-id="success-photo-3"]').html(arrayDetails[0].image3 !== '' ? '<img src="'+ arrayDetails[0].image3 +'" >' : '');
-		$('[data-id="success-photo-4"]').html(arrayDetails[0].image4 !== '' ? '<img src="'+ arrayDetails[0].image4 +'" >' : '');
-		$('[data-id="success-store"]').html(arrayAddress[0].loja);
-		$('[data-id="success-address"]').html(arrayAddress[0].address);
-		$('[data-id="success-email"]').html(arrayContact[0].email !== '' ? '<span>E-mail:</span> ' + arrayContact[0].email : '');
-		$('[data-id="success-phone"]').html(arrayContact[0].phone !== '' ? '<span>Telefone:</span> ' + arrayContact[0].phone : '');
-		console.log(arrayLocal);
-		console.log(arrayDetails);
-		console.log(arrayAddress);
-		console.log(arrayContact);
+		if (arrayDetails.length > 0) {
+			var room1 = arrayDetails[0].room1 !== undefined && arrayDetails[0].room1 !== '' ? arrayDetails[0].room1 + ' m ' : '';
+			var room2 = arrayDetails[0].room2 !== undefined && arrayDetails[0].room2 !== '' ? ' / ' + arrayDetails[0].room2 + ' m' : '';
+			$('[data-id="nomeProject"]').html(arrayDetails[0].name);
+			$('[data-id="success-measures"]').append(room1);
+			$('[data-id="success-measures"]').append(room2);
+			$('[data-id="success-description"]').html(arrayDetails[0].description);
+			$('[data-id="success-photo-1"]').html(arrayDetails[0].image1 !== '' ? '<img src="'+ arrayDetails[0].image1 +'" >' : '');
+			$('[data-id="success-photo-2"]').html(arrayDetails[0].image2 !== '' ? '<img src="'+ arrayDetails[0].image2 +'" >' : '');
+			$('[data-id="success-photo-3"]').html(arrayDetails[0].image3 !== '' ? '<img src="'+ arrayDetails[0].image3 +'" >' : '');
+			$('[data-id="success-photo-4"]').html(arrayDetails[0].image4 !== '' ? '<img src="'+ arrayDetails[0].image4 +'" >' : '');
+		}
+		if (arrayAddress.length > 0) {
+			$('[data-id="success-store"]').html(arrayAddress[0].loja);
+			$('[data-id="success-address"]').html(arrayAddress[0].address);
+		}
+		if (arrayContact.length > 0) {
+			$('[data-id="success-email"]').html(arrayContact[0].email !== '' ? '<span>E-mail:</span> ' + arrayContact[0].email : '');
+			$('[data-id="success-phone"]').html(arrayContact[0].phone !== '' ? '<span>Telefone:</span> ' + arrayContact[0].phone : '');
+
+		}	
 	}
 
 	$(document).ready(function(){
