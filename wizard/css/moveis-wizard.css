@@ -2204,8 +2204,33 @@ body.moveis-wizard{
 		background-repeat: no-repeat;
     background-size: contain;
 	}
+	#wizard-modalMobile .wizard-modalMobile__actualy.active {
+		position: relative;
+	}
 	#wizard-modalMobile .wizard-modalMobile__actualy.active button:after {
-		background-image: url('../images/loading.gif');
+		background-image: none;
+		background-color: #1381ce;
+		border-radius: 50%;
+	}
+	@-webkit-keyframes rodar {
+    from {
+        -webkit-transform:rotate(0deg);
+    }
+    to {
+        -webkit-transform:rotate(360deg);
+    }
+	}
+	#wizard-modalMobile .wizard-modalMobile__actualy.active button:before {
+		content: "";
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #fff;
+    border-top-color: #1381ce;
+    position: absolute;
+    top: 10px;
+    right: 26px;
+    border-radius: 50%;
+		-webkit-animation: rodar .6s linear infinite;
 	}
 	#wizard-modalMobile .wizard-modalMobile__input {
     margin-bottom: 20px;
@@ -2305,6 +2330,7 @@ body.moveis-wizard{
     letter-spacing: normal;
     text-align: left;
     color: #000000;
+		background-color: #FFF;
 	}
 	#wizard-modalMobile .wizard-modalMobile__list li p.list-address {
     padding: initial;
@@ -2319,6 +2345,7 @@ body.moveis-wizard{
     letter-spacing: normal;
     text-align: left;
     color: #333333;
+		background-color: #FFF;
 	}
 	#wizard-modalMobile .wizard-modalMobile__list li p.list-address span {
     color: #666666;

@@ -1,4 +1,5 @@
 (function(){
+	var key = 'AIzaSyD6j-kRwQChRPCHtflqaEKLdIChEzObkxs';
 	var itemsCheck = 0;
 	var arrayLocal = [];
 	var arrayDetails = [];
@@ -95,7 +96,8 @@
 		if (width <= 949) {
 			$('[data-id="next-local"]').removeAttr("disabled");
 		}
-		$('.wizard-local__list li').on('click', function() {
+		$('.wizard-local__list li').on('click', function(e) {
+			e.preventDefault();
 			if ($(this).hasClass('active')){
 				$(this).removeClass('active');
 				itemsCheck--;
@@ -109,7 +111,8 @@
 			$(this).addClass('active');
 			desabledLocal()
 		})
-		$('[data-id="next-local"]').on('click', function() {
+		$('[data-id="next-local"]').on('click', function(e) {
+			e.preventDefault();
 			arrayLocal = [];
 			$.each($('.wizard-local__list li'), function(i, v) {
 				if ($(this).hasClass('active')) {
@@ -119,7 +122,8 @@
 			nextLocal();
 			scrollHeader();
 		});
-		$('[data-id="jump-local"]').on('click', function() {
+		$('[data-id="jump-local"]').on('click', function(e) {
+			e.preventDefault();
 			nextLocal();	
 			scrollHeader();
 		});
@@ -133,16 +137,19 @@
 		var widthDetails = window.innerWidth;
 
 		if (widthDetails <= 949) {
-			$('#wizard-open-description').on('click', function() {
+			$('#wizard-open-description').on('click', function(e) {
+				e.preventDefault();
 				scrollHeader();
 				$('.wizard-details-rigth').show();
 				$('body').addClass('wizard-no-scroll');
 			});
-			$('#wizard-description-cancel').on('click', function() {
+			$('#wizard-description-cancel').on('click', function(e) {
+				e.preventDefault();
 				$('.wizard-details-rigth').hide();
 				$('body').removeClass('wizard-no-scroll');
 			});
-			$('#wizard-description-save').on('click', function() {
+			$('#wizard-description-save').on('click', function(e) {
+				e.preventDefault();
 				var valueDescription = $('#wizard-details-textatea-description').val();
 				if(valueDescription !== '') {
 					$('.wizard-details-rigth').hide();
@@ -156,7 +163,8 @@
 			});
 		}
 
-		$('[data-id="comodo"]').on('click', function() {
+		$('[data-id="comodo"]').on('click', function(e) {
+			e.preventDefault();
 			$('.wizard-details').hide();
 			$('.wizard-contact').hide();
 			$('.wizard-address').hide();
@@ -207,34 +215,42 @@
 			$('[data-id="roomsSelect"]').html(arrayLocal[0] + ', ' + arrayLocal[1]);
 		}
 
-		$('[data-id="file1"]').on('click', function() {
+		$('[data-id="file1"]').on('click', function(e) {
+			e.preventDefault();
 			$('#fileImage1').click();
 		});
-		$('[data-id="file2"]').on('click', function() {
+		$('[data-id="file2"]').on('click', function(e) {
+			e.preventDefault();
 			$('#fileImage2').click();
 		});
-		$('[data-id="file3"]').on('click', function() {
+		$('[data-id="file3"]').on('click', function(e) {
+			e.preventDefault();
 			$('#fileImage3').click();
 		});
-		$('[data-id="file4"]').on('click', function() {
+		$('[data-id="file4"]').on('click', function(e) {
+			e.preventDefault();
 			$('#fileImage4').click();
 		});
-		$('[data-id="close1"]').on('click', function() {
+		$('[data-id="close1"]').on('click', function(e) {
+			e.preventDefault();
 			$('[data-id="fileImage1"]').removeClass('active');
 			$('#fileImage1').val('');
 			$('#image1').attr('src','');
 		});
-		$('[data-id="close2"]').on('click', function() {
+		$('[data-id="close2"]').on('click', function(e) {
+			e.preventDefault();
 			$('[data-id="fileImage2"]').removeClass('active');
 			$('#fileImage2').val('');
 			$('#image2').attr('src','');
 		});
-		$('[data-id="close3"]').on('click', function() {
+		$('[data-id="close3"]').on('click', function(e) {
+			e.preventDefault();
 			$('[data-id="fileImage3"]').removeClass('active');
 			$('#fileImage3').val('');
 			$('#image3').attr('src','');
 		});
-		$('[data-id="close4"]').on('click', function() {
+		$('[data-id="close4"]').on('click', function(e) {
+			e.preventDefault();
 			$('[data-id="fileImage4"]').removeClass('active');
 			$('#fileImage4').val('');
 			$('#image4').attr('src','');
@@ -265,13 +281,18 @@
 			filePreview(image, files, li);
 		});
 
-		$('[data-id="next-details"]').on('click', function() {
+		$('[data-id="next-details"]').on('click', function(e) {
+			e.preventDefault();
 			arrayDetails = [];
 			arrayDetails.push({
 				name: inputProject.val(),
 				description: inputDescription.val(),
 				room1: $('[data-id="room1Height"]').val() + 'x' + $('[data-id="room1Width"]').val(),
 				room2: $('[data-id="room2Height"]').val() + 'x' + $('[data-id="room2Width"]').val(),
+				room1Height: $('[data-id="room1Height"]').val(),
+				room1Width: $('[data-id="room1Width"]').val(),
+				room2Height: $('[data-id="room2Height"]').val(),
+				room2Width: $('[data-id="room2Width"]').val(),
 				image1: $('#image1').attr('src'),
 				image2: $('#image2').attr('src'),
 				image3: $('#image3').attr('src'),
@@ -281,7 +302,23 @@
 			nextDetails();
 			scrollHeader();
 		});
-		$('[data-id="jump-details"]').on('click', function() {
+		$('[data-id="jump-details"]').on('click', function(e) {
+			e.preventDefault();
+			arrayDetails = [];
+			arrayDetails.push({
+				name: '',
+				description: '',
+				room1: '',
+				room2: '',
+				room1Height: '',
+				room1Width: '',
+				room2Height: '',
+				room2Width: '',
+				image1: '',
+				image2: '',
+				image3: '',
+				image4: '',
+			});
 			nextDetails();
 			scrollHeader();
 		});
@@ -295,30 +332,39 @@
 				$('#wizard-modal-address').html(v.Rua + ', ' + v.Numero + ' - ' + v.Bairro + ' - ' + v.Municipio)
 				$('#wizard-modal-highlighter').html(v.HorarioFuncionamento)
 				$('.wizard-modal-item__footer button').attr('data-title', v.Nome);
+				$('.wizard-modal-item__footer button').attr('data-filial', v.IdEnderecoLojaFisica);
 				$('.wizard-modal-item').show();
 			}
 		})
 		
 	}
-	function jsonStore(data) {
-			dados = data;
+	function jsonStore(data, valueCep) {
+			dados = data.PontosMoveisPlanejados;
 			var htmlList;
 			var viewList = $('.wizard-modal__list ul');
 			var viewListMobile = $('.wizard-modalMobile__list ul');
 			var viewLengthMobile = $('#wizardLengthMobile');
-			var firstStory = data[0]
+			var btnMobileLocate = $('.wizard-modalMobile__actualy');
+			var firstStory = dados[0]
 			var viewStore = $('#wizard-addres-p-store');
 			var viewAddress = $('#wizard-addres-p');
 			var place = dados.length > 1 ? ' locais' : ' local';
 			var completeAddress = firstStory.Rua + ', ' + firstStory.Numero + ' - ' + firstStory.Bairro + ' - ' + firstStory.Municipio;
+			if (btnMobileLocate.hasClass('active')) {
+				btnMobileLocate.removeClass('active');
+			}
 			viewList.html('');
 			viewListMobile.html('');
-			viewStore.html(firstStory.Nome);
-			viewAddress.html(completeAddress)
+			if (viewStore.html() === '') {
+				viewStore.html(firstStory.Nome);
+				viewStore.attr('data-filial', firstStory.IdEnderecoLojaFisica);
+				viewAddress.html(completeAddress)
+			}			
 			viewLengthMobile.html(dados.length + place)
+			beaches = [];
 			$.each(dados, function(i, v) {
 				beaches.push([v.Nome, v.Latitude, v.Longitude])
-				htmlList = '<li id="loja-'+v.Nome.replace(/-/g, '').replace(/ /g, '')+'">' +
+				htmlList = '<li id="loja-'+v.Nome.replace(/-/g, '').replace(/ /g, '')+' "data-filial="'+ v.IdEnderecoLojaFisica +'">' +
 					'<figure><img src="https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png" alt=""></figure>' +
 					'<p>'+ v.Nome +'</p>' +
 					'<i></i>'
@@ -331,14 +377,14 @@
 							'<p class="list-address"><span>Horário de Funcionamento</span> '+ v.HorarioFuncionamento +'</p>' +
 						'</div>' +
 						'<div class="wizard-modalMobile__list-button">' +
-							'<button data-title="'+ v.Nome +'" data-address="'+ v.Rua +', '+ v.Numero +' - '+ v.Bairro +' - '+ v.Municipio +'" id="btnMobile-tatuape">Escolher Loja</button>' +
+							'<button data-title="'+ v.Nome +'" data-address="'+ v.Rua +', '+ v.Numero +' - '+ v.Bairro +' - '+ v.Municipio +'" id="btnMobile-tatuape"	data-filial="'+ v.IdEnderecoLojaFisica +'">Escolher Loja</button>' +
 						'</div>' +
 					'</li>';
 				viewList.append(htmlList);
 				viewListMobile.append(htmlListMobile);
 			})
 			$.ajax({
-				url:	"https://maps.googleapis.com/maps/api/geocode/json?address=03191140&key=AIzaSyDR5XxjdXsmwwduvqYbBHwDz-06j3RbHbk&callback",
+				url:	'https://maps.googleapis.com/maps/api/geocode/json?address='+ valueCep +'&key='+ key +'&callback',
 				data: {
 					format: 'json'
 				},
@@ -347,6 +393,8 @@
    			},
    			dataType: 'json',
 				success: function(data) {
+					latApi = '';
+					lngApi = '';
 					$.each(data.results, function(i, v) {
 						latApi = v.geometry.location.lat;
 						lngApi = v.geometry.location.lng;
@@ -356,9 +404,9 @@
    			type: 'GET'
 			});
 		}
-	function getMap() {
+	function getMap(valueCep) {
 		$.ajax({
-			url:	"https://henriquemelanda.com.br/wizard/js/db.json?v1",
+			url:	'https://fcamara.loja/lojas/cep/'+ valueCep +'/tipoloja?tipoloja=100&tipoloja=300&tipoloja=545',
 			data: {
 				format: 'json'
 			},
@@ -367,16 +415,34 @@
    		},
    		dataType: 'json',
 			success: function(data) {
-				jsonStore(data);	
+				if (data.PontosMoveisPlanejados.length === 0) {
+					alert('Não foi encontrada nenhuma loja');
+					return;
+				}
+				jsonStore(data, valueCep);	
 			},
    		type: 'GET'
 		});
 		
 	}
 	function showPosition(position) {
-    console.log(position.coords.latitude);
-    console.log(position.coords.longitude); 
-    console.log(position); 
+    var codLat = position.coords.latitude;
+    var codLon = position.coords.longitude; 
+		$.ajax({
+				url:	'https://maps.googleapis.com/maps/api/geocode/json?address='+ codLat+','+ codLon +'&key='+ key +'&callback',
+				data: {
+					format: 'json'
+				},
+				error: function(error) {
+					console.log(error)
+   			},
+   			dataType: 'json',
+				success: function(data) {
+					var cep = data.results[0].address_components[7].long_name.replace('-','');
+					getMap(cep);
+				},
+   			type: 'GET'
+			});
 	}
 	function address() {
 		var width = window.innerWidth;
@@ -391,64 +457,78 @@
 						$('[data-id="cidade"]').val(data.localidade);
 						$('[data-id="estado"]').val(data.uf);
 					});
-				getMap();
+				getMap(inputCep.val());
 			}
 		}
 
-		$('#buttonSearchModal').on('click', function() {
+		$('#buttonSearchModal').on('click', function(e) {
+			e.preventDefault();
 			var input = $('#imputSearchModal').val();
 			if (input !== '') {
-				getMap();
+				getMap(input);
 			}
 		})
-		$('#buttonSearchModalMobile').on('click', function() {
-			var input = $('#buttonSearchModalMobile').val();
+		$('#buttonSearchModalMobile').on('click', function(e) {
+			e.preventDefault();
+			var input = $('#inputSearchModalMobile').val();
 			if (input !== '') {
-				getMap();
+				getMap(input);
 			}
 		})
-		$('#geolocation').on('click', function() {
+		$('#geolocation').on('click', function(e) {
+			e.preventDefault();
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(showPosition);
+				$('.wizard-modalMobile__actualy').addClass('active');
     	} else {
         console.log("Geolocation is not supported by this browser.");
     	}
 		})
 
 		if (width >= 950) {
-			$(document).on('click', '.wizard-modal__list li', function() {
+			$(document).on('click', '.wizard-modal__list li', function(e) {
+				e.preventDefault();
 				var title = $(this).find('p').html();
 				selectStore(title);
 			});
-			$('.wizard-modal-item__header i').on('click', function() {
+			$('.wizard-modal-item__header i').on('click', function(e) {
+				e.preventDefault();
 				$('.wizard-modal__input').show();
 				$('.wizard-modal__list').show();
 				$('.wizard-modal-item').hide();
 			});
-			$('.wizard-address-store__buttons button').on('click', function(){
+			$('.wizard-address-store__buttons button').on('click', function(e){
+				e.preventDefault();
 				$('.wizard-modal').fadeIn();
 			});
-			$('.wizard-modal__header-close').on('click', function(){
+			$('.wizard-modal__header-close').on('click', function(e){
+				e.preventDefault();
 				$('.wizard-modal').fadeOut();
 			})
-			$('.wizard-modal-item__footer button').on('click', function() {
+			$('.wizard-modal-item__footer button').on('click', function(e) {
+				e.preventDefault();
 				var title = $(this).attr('data-title');
+				var filial = $(this).attr('data-filial');
 				var address = $('.wizard-modal-item__content .address').html();
 				$('.wizard-address-store__local .store').html(title);
+				$('.wizard-address-store__local .store').attr('data-filial', filial);
 				$('.wizard-address-store__local .address').html(address);
 				$('.wizard-modal').fadeOut();
 			});
 		} else {
-			$('.wizard-address-store__buttons #wizard-addres-store-button').on('click', function(){
+			$('.wizard-address-store__buttons #wizard-addres-store-button').on('click', function(e){
+				e.preventDefault();
 				scrollHeader();
 				$('body').addClass('wizard-no-scroll');
 				$('#wizard-modalMobile').fadeIn();
 			});
-			$('#wizard-modalMobile .wizard-modalMobile__header-close').on('click', function(){
+			$('#wizard-modalMobile .wizard-modalMobile__header-close').on('click', function(e){
+				e.preventDefault();
 				$('#wizard-modalMobile').fadeOut();
 				$('body').removeClass('wizard-no-scroll');
 			})
-			$(document).on('click', '#wizard-modalMobile .wizard-modalMobile__list li button', function() {
+			$(document).on('click', '#wizard-modalMobile .wizard-modalMobile__list li button', function(e) {
+				e.preventDefault();
 				$('body').removeClass('wizard-no-scroll');
 				var title = $(this).attr('data-title');
 				var address = $(this).attr('data-address');
@@ -460,7 +540,8 @@
 		}
 		
 		
-		$('[data-id="next-address"]').on('click', function() {
+		$('[data-id="next-address"]').on('click', function(e) {
+			e.preventDefault();
 			arrayAddress = []
 			arrayAddress.push({
 				cep: $('[data-id="cep"]').val(),
@@ -472,16 +553,32 @@
 				estado: $('[data-id="estado"]').val(),
 				loja: $('.wizard-address-store__local .store').html(),
 				address: $('.wizard-address-store__local .address').html(),
+				filial: $('.wizard-address-store__local .store').attr('data-filial'),
 			});
 			$('[data-id="addressSelect"]').removeClass('hide');
 			nextAddress();
 			scrollHeader();
 		})
-		$('[data-id="jump-address"]').on('click', function () {
+		$('[data-id="jump-address"]').on('click', function (e) {
+			e.preventDefault();
+			arrayAddress = []
+			arrayAddress.push({
+				cep: '',
+				rua: '',
+				numero: '',
+				complemento: '',
+				bairro: '',
+				cidade: '',
+				estado: '',
+				loja: '',
+				address: '',
+				filial: '',
+			});
 			nextAddress();
 			scrollHeader();
 		})
-		$('[data-id="detalhes"]').on('click', function() {
+		$('[data-id="detalhes"]').on('click', function(e) {
+			e.preventDefault();
 			$('.wizard-address').hide();
 			$('.wizard-contact').hide();
 			$('.wizard-local').hide();
@@ -538,9 +635,12 @@
         element.mask("(99) 9999-9999?9");
     	}
 		}).trigger('focusout');
-		$('[data-id="next-contact"]').on('click', function() {
+		$('[data-id="next-contact"]').on('click', function(e) {
+			e.preventDefault();
 			var checkCallme = $('#callme');
 			var checkSendemail = $('#sendemail');
+			var callmeStatus = 'false';
+			var sendEmailStatus = 'false'
 			var inputName = $('[data-id="fullName"]').val();
 			var inputPhone = $('[data-id="phone"]').val();
 			var inputEmail = $('[data-id="email"]').val();
@@ -555,6 +655,7 @@
 					alert('Por favor preencha seu telefone')
 					return;
 				}
+				callmeStatus = 'true';
 			}
 			if (checkSendemail.is(':checked')) {
 				if (inputEmail === '') {
@@ -565,6 +666,7 @@
 					alert('Preencha com um e-mail válido.')
 					return;
 				}
+				sendEmailStatus = 'true';
 			}
 			if (!checkSendemail.is(':checked') && !checkCallme.is(':checked')) {
 				alert('Por favor selecione uma forma de contato')
@@ -574,7 +676,9 @@
 			arrayContact.push({
 				name: inputName,
 				phone: inputPhone,
-				email: inputEmail
+				email: inputEmail,
+				callme: callmeStatus,
+				sendEmail: sendEmailStatus
 			});
 			$('[data-id="wizard-stage"]').hide();
 			$('.wizard-banner').show();
@@ -582,15 +686,87 @@
 			$('[data-id="wizard-success"]').show();
 			success();
 		});
-		$('[data-id="endereco"]').on('click', function() {
+		$('[data-id="endereco"]').on('click', function(e) {
+			e.preventDefault();
 			$('.wizard-contact').hide();
 			$('.wizard-details').hide();
 			$('.wizard-local').hide();
 			$('.wizard-address').show();
 		});
 	}
+	function sendObject(token) {
+		$.ajax({
+			url: 'https://virtserver.swaggerhub.com/pontta.com/precadastro/1.0.0/precadastro',
+				headers: {
+        	'Accept': 'application/json',
+          'Authorization': 'Bearer' + token
+				},
+				data: {
+				format: 'json'
+			},
+			error: function(error) {
+				console.log(error)
+   		},
+			dataType: 'json',
+			data: {
+				'nomeProjetoCliente': arrayDetails[0].name,
+      	'descricaoProjetoCliente': arrayDetails[0].description,
+      	'foto1': arrayDetails[0].image1,
+      	'foto2': arrayDetails[0].image2,
+      	'foto3': arrayDetails[0].image3,
+      	'foto4': arrayDetails[0].image4,
+      	'comodo1Comprimento': '',
+      	'comodo1Largura': arrayDetails[0].room1Width,
+      	'comodo1Altura': arrayDetails[0].room1Height,	
+      	'comodo2Comprimento': '',
+      	'comodo2Largura': arrayDetails[0].room2Width,
+      	'comodo2Altura': arrayDetails[0].room2Height,
+      	'ruaCliente': arrayAddress[0].rua,
+      	'numeroCliente': arrayAddress[0].numero,
+      	'complementoCliente': arrayAddress[0].complemento,
+      	'bairroCliente': arrayAddress[0].bairro,
+      	'cepCliente': arrayAddress[0].cep,
+      	'clidadeCliente': arrayAddress[0].cidade,
+      	'estadoCliente': arrayAddress[0].estado,
+      	'idFilial': arrayAddress[0].filial,
+      	'nomeLoja': arrayAddress[0].loja,
+      	'emailCliente': arrayContact[0].email,
+      	'nomeCliente': arrayContact[0].name,
+      	'telefoneCliente': arrayContact[0].phone,
+      	'contatoTelefone': arrayContact[0].callme,
+      	'contatoEmail': arrayContact[0].sendEmail
+			},
+			success: function(data) {
+				console.log(data)
+				console.log('sucesss')
+			},
+   		type: 'POST'
+		});
+	}
 
 	function success() {
+		$.ajax({
+				url:	'https://virtserver.swaggerhub.com/pontta.com/precadastro/1.0.0/gettoken',
+				 headers: {
+          'Accept': 'application/json',
+        	'Content-Type':'application/json'
+				},
+				data: {
+					format: 'json'
+				},
+				error: function(error) {
+					console.log(error)
+   			},
+				dataType: 'json',
+				data: {
+      		"senha": "asdf12345",
+        	"conta": "pontta.tecnologia"
+      	},
+				success: function(data) {
+					sendObject(data)
+				},
+   			type: 'POST'
+		});
 
 		if (arrayLocal.length > 0) {
 			for(var i = 0; i <= arrayLocal.length; i++) {
@@ -625,6 +801,3 @@
 		checkLocal();
 	});
 })(jQuery)
-
-
-
