@@ -16,6 +16,26 @@ tag: Projetos Henrique Rodrigues, Projetos Coisa de Dev
 
 			<a href="https://meu-curriculo.wedeploy.io/" target="_blank">
 				<div class="cards-titulo">
+					<h2>Color Gradient Generator React.js + Redux</h2>
+				</div>
+
+					<figure class="cards-image">
+						<img src="https://henriquemelanda.com.br/assests/img/color-generetor.png" alt="Color Gradient Generator React.js + Redux">
+					</figure>
+
+						<div class="tags">
+							<span>Open Source</span>
+              <span>React</span>
+              <span>Redux</span>
+						</div>
+			</a>
+
+		</section>
+    
+    <section class="cards">
+
+			<a href="https://meu-curriculo.wedeploy.io/" target="_blank">
+				<div class="cards-titulo">
 					<h2>Meu currículo GitHub</h2>
 				</div>
 
