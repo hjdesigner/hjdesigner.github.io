@@ -16,7 +16,7 @@ tag: Projetos Henrique Rodrigues, Projetos Coisa de Dev
 
 			<a href="https://henriquemelanda.com.br/grid-styled-components/" target="_blank">
 				<div class="cards-titulo">
-					<h2>Simples grid usando React.js com Styled Components</h2>
+					<h2>Simples grid com React.js e Styled Components</h2>
 				</div>
 
 					<figure class="cards-image">
