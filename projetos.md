@@ -14,6 +14,26 @@ tag: Projetos Henrique Rodrigues, Projetos Coisa de Dev
 		
     <section class="cards">
 
+			<a href="https://henriquemelanda.com.br/grid-styled-components/" target="_blank">
+				<div class="cards-titulo">
+					<h2>Simples grid usando React.js com Styled Components</h2>
+				</div>
+
+					<figure class="cards-image">
+						<img src="https://henriquemelanda.com.br/assests/img/grid-styled-components.jpg" alt="Simples grid usando React.js com Styled Components">
+					</figure>
+
+						<div class="tags">
+							<span>Open Source</span>
+              <span>React</span>
+              <span>Styled Components</span>
+						</div>
+			</a>
+
+		</section>
+		
+		<section class="cards">
+
 			<a href="https://henriquemelanda.com.br/color-gradient-generator/" target="_blank">
 				<div class="cards-titulo">
 					<h2>Color Gradient Generator React.js + Redux</h2>
