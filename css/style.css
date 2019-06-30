@@ -156,15 +156,13 @@ footer {
 }
 .footer-nav {
   display: flex;
+  list-style: none;
 }
 .footer-nav-item {
   margin: 0 var(--small-spacing, 8px);
   width: 22px;
 }
-.footer-nav-item svg {
-  width: 100%;
-}
-.footer-nav-item svg path {
+.footer-nav-item box-icon {
   fill: var(--color-lightGray);
 }
 
