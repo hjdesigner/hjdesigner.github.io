@@ -163,7 +163,18 @@ footer {
   width: 22px;
 }
 .footer-nav-item box-icon {
-  fill: var(--color-lightGray);
+  fill: var(--color-lightGray, #b3b3b3);
+}
+.footer-lamp {
+  background-color: transparent;
+  border: 0;
+  bottom: var(--small-spacing, 8px);
+  cursor: pointer;
+  position: fixed;
+  right: var(--regular-spacing, 16px);
+}
+.footer-lamp.active box-icon {
+  fill: var(--color-yellow, #FBC54C);
 }
 
 @media screen and (min-width: 768px) {
