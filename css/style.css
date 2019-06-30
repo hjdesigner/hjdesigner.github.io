@@ -1,0 +1,214 @@
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-lightGray: #b3b3b3;
+  --color-lightBlue: #58A9f3;
+  --color-yellow: #FBC54C;
+  --color-green: #7BE473;
+  --color-footer: #171616;
+  --small-spacing: 8px;
+  --regular-spacing: 16px;
+  --medium-spacing: 24px;
+  --large-spacing: 32px;
+  --extraLarge-spacing: 64px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--color-black, #000);
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+}
+@keyframes typedEffect {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+strong {
+  color: var(--color-lightBlue, #3487f5);
+}
+.introduction,
+.lab,
+.articles {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--extraLarge-spacing, 64px) var(--regular-spacing, 16px);
+  width: 100%;
+}
+.introduction-content,
+.lab-content,
+.articles-content {
+  max-width: 1000px;
+  width: 100%;
+}
+.introduction-image {
+  text-align: center;
+}
+.introduction-image img {
+  max-width: 125px;
+}
+.introduction-title {
+  color: var(--color-white, #FFFFFF);
+  font-size: 3.6em;
+  font-weight: 300;
+  margin: var(--medium-spacing, 24px) 0 0;
+  text-align: center;
+}
+.introduction-sub-title,
+.lab-title,
+.articles-title {
+  color: var(--color-white, #FFFFFF);
+  font-size: 2.6em;
+  font-weight: 300;
+  margin: var(--small-spacing, 8px) 0 var(--large-spacing, 32px);
+  text-align: center;
+}
+.introduction-sub-title::after,
+.lab-title::after,
+.articles-title::after {
+  animation: typedEffect .7s infinite;
+  content: '|';
+  display: inline-block;
+  margin: 0 var(--regular-spacing, 16px);
+}
+.introduction-text {
+  color: var(--color-lightGray, #b3b3b3);
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1.5; 
+  margin: var(--small-spacing, 8px) 0 0;
+  text-align: center;
+}
+.lab-title {
+  color: var(--color-yellow, #FBC54C);
+  font-weight: 400;
+  text-align: left;
+}
+.lab-list,
+.articles-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.lab-item {
+  margin-bottom: var(--medium-spacing, 24px);
+  width: 100%;
+}
+.lab-item a,
+.articles-item a{
+  text-decoration: none;
+}
+.lab-image {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 47%;
+  width: 100%;
+}
+.lab-item img {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 100%;
+}
+.lab-item-title {
+  color: var(--color-white, #FFFFFF);
+  font-size: 1.8em;
+  margin-top: var(--small-spacing, 8px);
+}
+.articles-title {
+  color: var(--color-green, #7BE473);
+  font-weight: 400;
+  text-align: left;
+}
+.articles-item {
+  padding: var(--regular-spacing, 16px) 0;
+  border-bottom: 2px solid var(--color-lightGray, ##58A9f3);
+}
+.article-title {
+  color: var(--color-lightGray, #b3b3b3);
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1.5; 
+}
+footer {
+  align-items: center;
+  background-color: var(--color-footer, #171616);
+  display: flex;
+  bottom: 0;
+  justify-content: center;
+  left: 0;
+  padding: var(--small-spacing, 8px) 0;
+  position: fixed;
+  width: 100%;
+}
+.footer-nav {
+  display: flex;
+}
+.footer-nav-item {
+  margin: 0 var(--small-spacing, 8px);
+  width: 22px;
+}
+.footer-nav-item svg {
+  width: 100%;
+}
+.footer-nav-item svg path {
+  fill: var(--color-lightGray);
+}
+
+@media screen and (min-width: 768px) {
+  .lab-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .lab-item {
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .introduction-image img {
+    max-width: 200px;
+  }
+  .introduction-title {
+    font-size: 6em;
+  }
+  .introduction-sub-title,
+  .lab-title {
+    font-size: 3em;
+  }
+  .introduction-text {
+    font-size: 2.4em;
+  }
+
+  .lab-item {
+    width: 31%;
+  }
+  .lab-item {
+    transition: opacity .25s ease-in-out;
+  }
+  .lab-item:hover {
+    opacity: .8;
+  }
+  .articles-item a .article-title {
+    transition: color .25s ease-in-out;
+  }
+  .articles-item a:hover .article-title {
+    color: var(--color-lightBlue, #58A9f3)
+  }
+
+}
